@@ -22,8 +22,8 @@
         <nav class="py-6 mb-12 animate-slide-down">
             <div class="flex items-center justify-between ">
                 <div class="flex items-center gap-3">
-                    <img src="{{ asset('assets/logo.gif') }}" alt="logo" class="size-16">
-                    <span class="text-2xl font-bold text-violet-900">{{ config('app.name') }}</span>
+                    <img src="{{ asset('assets/logo-Photoroom.png') }}" alt="WRMC Logo"
+                        class="h-20 w-auto mb-5 mx-auto lg:mx-0">
                 </div>
             </div>
         </nav>
@@ -38,8 +38,9 @@
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                 </span>
-                <span class="text-sm font-medium text-violet-900">Delivering measurable outcomes and long-term
-                    value</span>
+                <span class="text-sm font-medium text-violet-900">
+                    Trusted by Logan families for over 45 years
+                </span>
             </div>
 
             {{-- Main Heading --}}

@@ -27,7 +27,7 @@
     <p class="my-10 text-violet-950 text-center text-6xl font-extrabold">Meet our Doctors</p>
     <p class="my-5 text-violet-950 text-center text-3xl font-semibold max-w-xl mx-auto">Dedicated & Experienced Team</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
         @foreach ($doctors as $doctor)
             <x-home.doctors.doctor-card
                 :name="$doctor['name']"
