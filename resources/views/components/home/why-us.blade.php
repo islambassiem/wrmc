@@ -5,7 +5,6 @@
         </div>
         <div class="flex flex-col items-center justify-center">
             <p class="my-10 text-4xl text-violet-500">WHY US</p>
-            <p class="text-5xl font-bold text-gray-700 mb-10 text-center">Your Health, Our Priority</p>
 
             <x-home.why-us-card summery="45+ Years of Trusted Care"
                 details="Experienced GPs delivering comprehensive healthcare with clinical excellence and genuine compassion">
