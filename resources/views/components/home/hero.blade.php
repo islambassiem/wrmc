@@ -1,16 +1,16 @@
 <section
-    class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-violet-50 via-white to-teal-50">
+    class="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-violet-50 via-white to-teal-50">
     {{-- Animated Background Elements --}}
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         {{-- Gradient Orbs --}}
         <div
-            class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-violet-400 to-teal-400 rounded-full opacity-20 blur-3xl animate-float">
+            class="absolute -top-40 -right-40 w-96 h-96 bg-linear-to-br from-violet-400 to-teal-400 rounded-full opacity-20 blur-3xl animate-float">
         </div>
         <div
-            class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-teal-400 to-violet-400 rounded-full opacity-20 blur-3xl animate-float-delayed">
+            class="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-teal-400 to-violet-400 rounded-full opacity-20 blur-3xl animate-float-delayed">
         </div>
         <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-violet-300 to-purple-300 rounded-full opacity-10 blur-3xl animate-float-slow">
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-violet-300 to-purple-300 rounded-full opacity-10 blur-3xl animate-float-slow">
         </div>
 
         {{-- Medical Grid Pattern --}}

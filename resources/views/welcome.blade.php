@@ -13,7 +13,10 @@
         <x-home.why-us />
         <x-home.services />
         <x-home.ndis />
+        <x-home.doctors />
         <x-home.telehealth />
+        <x-home.blog />
+        <x-home.accepted-cards />
         <x-home.cta />
         <x-home.footer />
     </div>

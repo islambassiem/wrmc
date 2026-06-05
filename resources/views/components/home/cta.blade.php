@@ -1,5 +1,5 @@
 <section
-    class="py-20 bg-gradient-to-br from-violet-600 via-violet-700 to-violet-800 text-white relative overflow-hidden">
+    class="py-20 bg-linear-to-br from-violet-600 via-violet-700 to-violet-800 text-white relative overflow-hidden">
     {{-- Background Pattern --}}
     <div class="absolute inset-0 opacity-10">
         <div class="absolute inset-0 bg-grid-pattern"></div>
