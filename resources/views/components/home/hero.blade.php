@@ -18,20 +18,6 @@
     </div>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
-        {{-- Navigation --}}
-        <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-[9999]">
-            <div class="flex flex-col md:flex-row md:justify-between w-full">
-                <div class="flex items-center gap-3">
-                    <img src="{{ asset('assets/logo-Photoroom.png') }}" alt="WRMC Logo"
-                        class="h-20 lg:h-36 w-auto mx-auto lg:mx-0">
-                </div>
-                <a href="/"
-                    class="uppercase md:self-center md:me-2 md:rounded-md inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold md:px-4 md:py-4 py-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                    Book Appointment
-                </a>
-            </div>
-        </nav>
-
         {{-- Hero Content --}}
         <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up pt-36 ">
             {{-- Badge --}}
