@@ -1,9 +1,9 @@
 <section class="container mx-auto bg-gray-100 py-10 mb-10">
-    <h2 class="font-bold text-3xl text-center text-violet-500">
+    <h2 class="font-bold text-3xl text-center text-primary-500">
         Accepted Health Cards & Partners
     </h2>
     <p class="leading-6 text-center text-gray-600 pt-4">Please call us at
-        <span class="text-violet-500 font-bold"> 07 3412 8333</span>
+        <span class="text-primary-500 font-bold"> 07 3412 8333</span>
         and we'll help you out.
     </p>
 

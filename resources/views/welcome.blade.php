@@ -8,7 +8,7 @@
         <x-home.hero />
         <x-home.stats />
         <x-home.medicare />
-        <x-home.consultations />
+        {{-- <x-home.consultations /> --}}
         <x-home.features />
         <x-home.why-us />
         <x-home.services />

@@ -3,7 +3,7 @@
 
         <!-- Content -->
         <div class="flex-1 p-8 md:p-12 lg:p-16">
-            <span class="text-sm font-semibold uppercase tracking-wider text-violet-600">
+            <span class="text-sm font-semibold uppercase tracking-wider text-primary-600">
                 Healthcare Support
             </span>
 
@@ -19,7 +19,7 @@
             </p>
 
             <a href="#"
-                class="mt-8 inline-flex items-center gap-3 text-violet-700 font-semibold hover:gap-4 transition-all">
+                class="mt-8 inline-flex items-center gap-3 text-primary-700 font-semibold hover:gap-4 transition-all">
                 Find out more
                 <i class="fa-solid fa-arrow-right"></i>
             </a>

@@ -19,11 +19,11 @@
 
                     <p>🕒 Open 7 Days · 8:30 AM – 5:00 PM</p>
 
-                    <a href="tel:0734128333" class="block text-violet-400 hover:text-violet-300">
+                    <a href="tel:0734128333" class="block text-primary-400 hover:text-primary-300">
                         (07) 3412 8333
                     </a>
 
-                    <a href="mailto:wrmc4114@gmail.com" class="block text-violet-400 hover:text-violet-300 break-all">
+                    <a href="mailto:wrmc4114@gmail.com" class="block text-primary-400 hover:text-primary-300 break-all">
                         wrmc4114@gmail.com
                     </a>
                 </div>
@@ -38,7 +38,7 @@
                 <ul class="space-y-3">
                     <li>
                         <a href="/"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             General Practitioner
                         </a>
                     </li>
@@ -54,19 +54,19 @@
                 <ul class="space-y-3">
                     <li>
                         <a href="#"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             Our Team
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             Our Services
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             Blogs
                         </a>
                     </li>
@@ -82,19 +82,19 @@
                 <ul class="space-y-3">
                     <li>
                         <a href="#"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             FAQs
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             Contact Us
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                            class="text-sm transition-all duration-300 hover:text-violet-400 hover:translate-x-1 inline-block">
+                            class="text-sm transition-all duration-300 hover:text-primary-400 hover:translate-x-1 inline-block">
                             Privacy Policy
                         </a>
                     </li>
@@ -113,27 +113,27 @@
                 <div class="flex flex-wrap justify-center gap-3">
 
                     <a href="https://www.instagram.com/wrmcau/"
-                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-violet-600 hover:text-white transition-all duration-300">
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
                     <a href="https://www.facebook.com/wrmcau/"
-                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-violet-600 hover:text-white transition-all duration-300">
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
 
                     <a href="https://x.com/wrmcau0"
-                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-violet-600 hover:text-white transition-all duration-300">
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
 
                     <a href="https://www.linkedin.com/company/wrmcau/"
-                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-violet-600 hover:text-white transition-all duration-300">
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
                     <a href="https://www.tiktok.com/@wrmcau"
-                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-violet-600 hover:text-white transition-all duration-300">
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
                         <i class="fa-brands fa-tiktok"></i>
                     </a>
 

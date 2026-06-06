@@ -1,4 +1,4 @@
-<section class="bg-violet-50 py-10 my-10">
+<section class="bg-primary-50 py-10 my-10">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-1">
         {{-- Section Header --}}
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -17,7 +17,7 @@
             <div class="text-center sm:text-left">
                 <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1">
                     <span class="w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="fa-regular fa-clock text-violet-700 text-xl"></i>
+                        <i class="fa-regular fa-clock text-primary-700 text-xl"></i>
                     </span>
                     <p class="font-bold">Convenient Hours</p>
                 </div>
@@ -30,7 +30,7 @@
             <div class="text-center sm:text-left">
                 <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1">
                     <span class="w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-flask-vial text-violet-700 text-xl"></i>
+                        <i class="fa-solid fa-flask-vial text-primary-700 text-xl"></i>
                     </span>
                     <p class="font-bold">Expert Care - Your Regular GPs</p>
                 </div>
@@ -42,7 +42,7 @@
             <div class="text-center sm:text-left">
                 <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1">
                     <span class="w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-money-bill text-violet-700 text-xl"></i>
+                        <i class="fa-solid fa-money-bill text-primary-700 text-xl"></i>
                     </span>
                     <p class="font-bold">Bulk Billing Available</p>
                 </div>
@@ -54,7 +54,7 @@
             <div class="text-center sm:text-left">
                 <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1">
                     <span class="w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-capsules text-violet-700 text-xl"></i>
+                        <i class="fa-solid fa-capsules text-primary-700 text-xl"></i>
                     </span>
                     <p class="font-bold">Prescriptions</p>
                 </div>

@@ -12,7 +12,7 @@
         {{ $slot }}
         <span class="text-xl font-semibold hover:bg-gray-100">
             {{ $summery }}
-            <i class="fa-solid fa-chevron-down fa-sm duration-500 text-violet-600" :class="open ? 'rotate-180' : '' "></i>
+            <i class="fa-solid fa-chevron-down fa-sm duration-500 text-primary-600" :class="open ? 'rotate-180' : '' "></i>
         </span>
     </p>
 

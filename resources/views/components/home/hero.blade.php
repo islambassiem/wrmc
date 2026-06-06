@@ -1,16 +1,16 @@
 <section
-    class="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-violet-50 via-white to-teal-50">
+    class="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-primary-50 via-white to-teal-50">
     {{-- Animated Background Elements --}}
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         {{-- Gradient Orbs --}}
         <div
-            class="absolute -top-40 -right-40 w-96 h-96 bg-linear-to-br from-violet-400 to-teal-400 rounded-full opacity-20 blur-3xl animate-float">
+            class="absolute -top-40 -right-40 w-96 h-96 bg-linear-to-br from-primary-400 to-teal-400 rounded-full opacity-20 blur-3xl animate-float">
         </div>
         <div
-            class="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-teal-400 to-violet-400 rounded-full opacity-20 blur-3xl animate-float-delayed">
+            class="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-teal-400 to-primary-400 rounded-full opacity-20 blur-3xl animate-float-delayed">
         </div>
         <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-violet-300 to-purple-300 rounded-full opacity-10 blur-3xl animate-float-slow">
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-primary-300 to-purple-300 rounded-full opacity-10 blur-3xl animate-float-slow">
         </div>
 
         {{-- Medical Grid Pattern --}}
@@ -19,26 +19,30 @@
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
         {{-- Navigation --}}
-        <nav class="py-6 mb-12 animate-slide-down">
-            <div class="flex items-center justify-between ">
+        <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50">
+            <div class="flex flex-col md:flex-row md:justify-between w-full">
                 <div class="flex items-center gap-3">
                     <img src="{{ asset('assets/logo-Photoroom.png') }}" alt="WRMC Logo"
-                        class="h-20 w-auto mb-5 mx-auto lg:mx-0">
+                        class="h-20 lg:h-36 w-auto mx-auto lg:mx-0">
                 </div>
+                <a href="/"
+                    class="uppercase md:self-center md:me-2 md:rounded-md inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold md:px-4 md:py-4 py-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    Book Appointment
+                </a>
             </div>
         </nav>
 
         {{-- Hero Content --}}
-        <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up">
+        <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up pt-36 ">
             {{-- Badge --}}
             <div
-                class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-violet-200 px-4 py-2 rounded-full mb-8 shadow-sm">
+                class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary-200 px-4 py-2 rounded-full mb-8 shadow-sm">
                 <span class="relative flex h-2 w-2">
                     <span
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                 </span>
-                <span class="text-sm font-medium text-violet-900">
+                <span class="text-sm font-medium text-primary-900">
                     Trusted by Logan families for over 45 years
                 </span>
             </div>
@@ -46,7 +50,7 @@
             {{-- Main Heading --}}
             <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-900">
                 Logan Central's
-                <span class="italic text-violet-600">Family Medical</span>
+                <span class="italic text-primary-600">Family Medical</span>
                 Centre
             </h1>
 
@@ -59,7 +63,7 @@
             {{-- CTA Buttons --}}
             <div class="flex flex-col sm:flex-row gap-4 mb-12">
                 <a href="/"
-                    class="group inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    class="group inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     Book Appointment
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
