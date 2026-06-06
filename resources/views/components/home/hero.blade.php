@@ -19,7 +19,7 @@
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
         {{-- Navigation --}}
-        <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50">
+        <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-[9999]">
             <div class="flex flex-col md:flex-row md:justify-between w-full">
                 <div class="flex items-center gap-3">
                     <img src="{{ asset('assets/logo-Photoroom.png') }}" alt="WRMC Logo"
