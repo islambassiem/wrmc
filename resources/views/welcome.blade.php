@@ -8,7 +8,7 @@
         <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50" role="navigation">
             <div class="flex flex-col md:flex-row md:justify-between w-full">
                 <div class="flex items-center gap-3">
-                    <img src="{{ asset('assets/logo-Photoroom.png') }}" alt="WRMC Logo"
+                    <img src="{{ asset('assets/logo.webp') }}" alt="WRMC Logo"
                         class="h-20 lg:h-36 w-auto mx-auto lg:mx-0">
                 </div>
                 <a href="/"

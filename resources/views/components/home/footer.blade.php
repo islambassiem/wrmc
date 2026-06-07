@@ -6,7 +6,7 @@
 
             <!-- Brand -->
             <div class="text-center lg:text-left">
-                <img src="{{ asset('assets/logo-Photoroom.png') }}" alt="WRMC Logo"
+                <img src="{{ asset('assets/logo.webp') }}" alt="WRMC Logo"
                     class="h-20 w-auto mb-5 mx-auto lg:mx-0">
 
                 <p class="max-w-md mx-auto lg:mx-0 text-sm leading-7 text-gray-400">
