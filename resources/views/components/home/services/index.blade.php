@@ -5,27 +5,27 @@
             'subitems' => [
                 [
                     'title' => 'Cold & Flu',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f927.svg',
+                    'svg' => 'cold-flu',
                 ],
                 [
                     'title' => 'Ear Infections',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f442.svg',
+                    'svg' => 'ear-infections',
                 ],
                 [
                     'title' => 'Eye Infections',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f441.svg',
+                    'svg' => 'eye-infections',
                 ],
                 [
                     'title' => 'Sore Throat',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f9b7.svg',
+                    'svg' => 'sore-throat',
                 ],
                 [
                     'title' => 'Respiratory Infections',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1fac1.svg',
+                    'svg' => 'respiratory-infections',
                 ],
                 [
                     'title' => 'Fever Management',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f321.svg',
+                    'svg' => 'fever-management',
                 ],
             ],
         ],
@@ -34,27 +34,27 @@
             'subitems' => [
                 [
                     'title' => 'Asthma',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1fac0.svg',
+                    'svg' => 'asthma',
                 ],
                 [
                     'title' => 'Diabetes Management',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1fa78.svg',
+                    'svg' => 'diabetes-management',
                 ],
                 [
                     'title' => 'Blood Pressure',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f48a.svg',
+                    'svg' => 'blood-pressure',
                 ],
                 [
                     'title' => 'Mental Health',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f9e0.svg',
+                    'svg' => 'mental-health',
                 ],
                 [
                     'title' => 'Joint Pain',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f9b4.svg',
+                    'svg' => 'joint-pain',
                 ],
                 [
                     'title' => 'Back Pain',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f519.svg',
+                    'svg' => 'back-pain',
                 ],
             ],
         ],
@@ -63,28 +63,28 @@
             'subitems' => [
                 [
                     'title' => 'Paediatric Care',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f476.svg',
+                    'svg' => 'pediatric-care',
                 ],
                 [
                     'title' => "Women's Health",
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f469.svg',
+                    'svg' => 'womens-health',
                 ],
 
                 [
                     'title' => "Men's Health",
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f468.svg',
+                    'svg' => 'mens-health',
                 ],
                 [
                     'title' => 'Family Medicine',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f46a.svg',
+                    'svg' => 'family-medicine',
                 ],
                 [
                     'title' => 'Travel Vaccinations',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/2708.svg',
+                    'svg' => 'travel-vaccinations',
                 ],
                 [
                     'title' => 'Immunisations',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f489.svg',
+                    'svg' => 'immunisations',
                 ],
             ],
         ],
@@ -93,27 +93,27 @@
             'subitems' => [
                 [
                     'title' => 'Skin Checks',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f52c.svg',
+                    'svg' => 'skin-checks',
                 ],
                 [
                     'title' => 'Skin Lesions',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1fa79.svg',
+                    'svg' => 'skin-lesions',
                 ],
                 [
                     'title' => 'Work Medicals',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f9ba.svg',
+                    'svg' => 'work-medicals',
                 ],
                 [
                     'title' => 'Urgent Care',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f691.svg',
+                    'svg' => 'urgent-care',
                 ],
                 [
                     'title' => 'Minor Injuries',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1fa7b.svg',
+                    'svg' => 'minor-injuries',
                 ],
                 [
                     'title' => 'Pain Relief',
-                    'svg' => 'https://s.w.org/images/core/emoji/17.0.2/svg/1f486.svg',
+                    'svg' => 'pain-relief',
                 ],
             ],
         ],
@@ -128,7 +128,7 @@
     <p class="my-5 text-primary-950 text-center text-md md:text-2xl font-bold">Our experienced GPs treat a wide range of conditions
         for patients of all ages. Click any condition to learn more.
     </p>
-
+    {{-- {!!  (file_get_contents(resource_path("svg/cold-flu.svg"))) !!} --}}
     <div class="flex flex-col mb-10 mx-5">
         @foreach ($items as $item)
             <x-home.services.illness :title="$item['title']" :subitems="$item['subitems']" />

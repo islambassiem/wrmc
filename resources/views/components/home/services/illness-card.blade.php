@@ -1,7 +1,6 @@
 @props(['title', 'svg' => null])
 
-<span
-    class="flex items-center gap-3
+<span class="flex items-center gap-3
            w-full
            border border-primary-400
            rounded-lg
@@ -10,7 +9,7 @@
            hover:bg-primary-50
            transition-all duration-300">
     @if ($svg)
-        <img src="{{ $svg }}" alt="{{ $title }}" class="size-5 shrink-0">
+        <x-icon :name="$svg" class="w-5 h-5" />
     @endif
 
     <span>
