@@ -1,4 +1,4 @@
-<footer class="bg-gray-950 text-gray-400">
+<footer class="bg-gray-950 text-gray-400" role="contentinfo">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Main Footer -->
@@ -31,9 +31,9 @@
 
             <!-- Services -->
             <div class="text-center lg:text-left">
-                <h4 class="mb-5 text-sm font-semibold uppercase tracking-widest text-white">
+                <div class="mb-5 text-sm font-semibold uppercase tracking-widest text-white">
                     Our Services
-                </h4>
+                </div>
 
                 <ul class="space-y-3">
                     <li>
@@ -47,9 +47,9 @@
 
             <!-- About -->
             <div class="text-center lg:text-left">
-                <h4 class="mb-5 text-sm font-semibold uppercase tracking-widest text-white">
+                <div class="mb-5 text-sm font-semibold uppercase tracking-widest text-white">
                     About
-                </h4>
+                </div>
 
                 <ul class="space-y-3">
                     <li>
@@ -75,9 +75,9 @@
 
             <!-- Resources -->
             <div class="text-center lg:text-left">
-                <h4 class="mb-5 text-sm font-semibold uppercase tracking-widest text-white">
+                <div class="mb-5 text-sm font-semibold uppercase tracking-widest text-white">
                     Resources
-                </h4>
+                </div>
 
                 <ul class="space-y-3">
                     <li>
@@ -106,7 +106,7 @@
         <div class="border-t border-gray-800 py-6">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
 
-                <p class="text-sm text-gray-500 text-center lg:text-left">
+                <p class="text-sm text-gray-300 text-center lg:text-left">
                     © {{ date('Y') }} Wembley Road Medical Centre. All rights reserved.
                 </p>
 
@@ -114,26 +114,31 @@
 
                     <a href="https://www.instagram.com/wrmcau/"
                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
+                        <span class="sr-only">Instegram Link</span>
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
                     <a href="https://www.facebook.com/wrmcau/"
                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
+                        <span class="sr-only">Facebook Link</span>
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
 
                     <a href="https://x.com/wrmcau0"
                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
+                        <span class="sr-only">Twitter Link</span>
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
 
                     <a href="https://www.linkedin.com/company/wrmcau/"
                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
+                        <span class="sr-only">LinkenIn Link</span>
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
                     <a href="https://www.tiktok.com/@wrmcau"
                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 hover:bg-primary-600 hover:text-white transition-all duration-300">
+                        <span class="sr-only">TikTok Link</span>
                         <i class="fa-brands fa-tiktok"></i>
                     </a>
 

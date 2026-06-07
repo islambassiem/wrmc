@@ -137,11 +137,11 @@
 
     <div class="flex flex-col items-center justify-center gap-4 mb-12">
         <a href="/"
-            class="group inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            class="group inline-flex items-center justify-center gap-2 bg-primary-800 hover:bg-primary-900 text-primary-50 font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
             View all conditions & services
             <i class="fa-solid fa-arrow-right"></i>
         </a>
-        <span class="text-sm text-gray-400">
+        <span class="text-sm text-gray-600">
             * Bulk billing available for eligible Medicare patients
         </span>
     </div>

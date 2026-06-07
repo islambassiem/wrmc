@@ -49,7 +49,7 @@
             {{-- CTA Buttons --}}
             <div class="flex flex-col sm:flex-row gap-4 mb-12">
                 <a href="/"
-                    class="group inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    class="group inline-flex items-center justify-center gap-2 bg-primary-800 hover:bg-primary-900 text-primary-50 font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     Book Appointment
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>

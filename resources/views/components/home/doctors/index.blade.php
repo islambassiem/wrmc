@@ -3,27 +3,27 @@
         [
             'name' => 'Dr Ibrahim Elmezayen',
             'title' => 'GP, MBBS',
-            'image' => 'https://wrmc.au/wp-content/uploads/2025/12/WhatsApp-Image-2026-03-24-at-11.47.51-AM-300x266.jpeg',
+            'image' => asset('assets/images/staff/Ibrahim_Elmezayen.webp'),
         ],
         [
             'name' => 'Dr Abul Khondaker',
             'title' => 'GP, MBBS, FRACGP',
-            'image' => 'https://wrmc.au/wp-content/uploads/2025/12/Dr-Abul-Hashem-Khondaker-f-300x268.png',
+            'image' => asset('assets/images/staff/Abul-Hashem-Khondaker.webp'),
         ],
         [
             'name' => 'Dr Htay Thaung',
             'title' => 'GP, MBBS, AMC, FRACGP',
-            'image' => 'https://wrmc.au/wp-content/uploads/2025/12/Dr-Htay-F-300x270.png',
+            'image' => asset('assets/images/staff/Htay_Thaung.webp'),
         ],
         [
             'name' => 'Dr Mohammad Hafiz',
             'title' => 'GP, MBBS, FRACGP',
-            'image' => 'https://wrmc.au/wp-content/uploads/2026/03/Gemini_Generated_Image_jcslfajcslfajcsl-1-203x300.png',
+            'image' => asset('assets/images/staff/Mohammad_Hafiz.webp'),
         ],
         [
             'name' => 'Dr Farzana Rahman',
             'title' => 'GP, MBBS, AMC, FRACGP',
-            'image' => 'https://wrmc.au/wp-content/uploads/2026/01/Dr-Farzana-Rahman-Wg3.png.jpg',
+            'image' => asset('assets/images/staff/Farzana_Rahman.webp'),
         ],
     ];
 @endphp

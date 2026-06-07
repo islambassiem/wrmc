@@ -3,7 +3,7 @@
         Accepted Health Cards & Partners
     </h2>
     <p class="leading-6 text-center text-gray-600 pt-4">Please call us at
-        <span class="text-primary-500 font-bold"> 07 3412 8333</span>
+        <span class="text-primary-800 font-bold"> 07 3412 8333</span>
         and we'll help you out.
     </p>
 

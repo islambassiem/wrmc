@@ -3,7 +3,7 @@
 
         <!-- Content -->
         <div class="flex-1 p-8 md:p-12 lg:p-16">
-            <span class="text-sm font-semibold uppercase tracking-wider text-primary-600">
+            <span class="text-sm font-semibold uppercase tracking-wider text-primary-800">
                 Healthcare Support
             </span>
 
@@ -27,7 +27,7 @@
 
         <!-- Image -->
         <div class="flex-1">
-            <img src="{{ asset('assets/images/Dr-Htay-NDIS-f.png') }}" alt="Allied Health & Support Services"
+            <img src="{{ asset('assets/images/Dr-Htay-NDIS-f.webp') }}" alt="Allied Health & Support Services"
                 class="h-full w-full object-cover">
         </div>
 
