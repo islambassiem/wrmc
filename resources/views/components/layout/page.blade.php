@@ -3,8 +3,8 @@
 
 @include('partials.head')
 
-<body class="min-h-screen antialiased pt-36">
-    <main class="min-h-screen font-sans" role="main" x-data="{open: false}">
+<body class="antialiased">
+    <main class="font-sans" role="main" x-data="{open: false}">
         <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50" role="navigation">
             <div class="flex flex-col md:flex-row md:justify-between w-full ">
                 <div class="flex items-center justify-between gap-3 flex-1">
@@ -26,7 +26,7 @@
                             <x-home.modal />
                         </div>
                     </div>
-                    <div class="hidden md:flex items-center justify-evenly mx-auto gap-5 p-4 flex-1">
+                    <div class="hidden md:flex items-center mx-auto gap-4 lg:gap-5 p-4 flex-1">
                         <a href="/"
                             class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Home</a>
                         <a href="#services"
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <a href="{{ config('app.booking_url') }}" target="_blank"
-                    class="uppercase md:self-center md:me-2 md:rounded-md inline-flex items-center justify-center flex-wrap gap-2 bg-primary-800 hover:bg-primary-900 text-primary-50 font-semibold py-2 md:py-4 md:px-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    class="uppercase shrink-0 md:self-center md:me-2 md:rounded-md inline-flex items-center justify-center flex-wrap gap-2 bg-primary-800 hover:bg-primary-900 text-primary-50 font-semibold py-2 md:py-4 md:px-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     Book Now
                 </a>
             </div>

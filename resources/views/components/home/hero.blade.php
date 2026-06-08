@@ -17,7 +17,7 @@
         <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <div class="container mx-auto px-4  sm:px-6 lg:px-8 relative z-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-36 md:pt-28 lg:pt-40">
         {{-- Hero Content --}}
         <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up ">
             {{-- Badge --}}
