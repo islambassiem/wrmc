@@ -17,11 +17,11 @@
         <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
+    <div class="container mx-auto px-4  sm:px-6 lg:px-8 relative z-10">
         {{-- Hero Content --}}
-        <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up pt-36 ">
+        <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up ">
             {{-- Badge --}}
-            <div
+            <h1
                 class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary-200 px-4 py-2 rounded-full mb-8 shadow-sm">
                 <span class="relative flex h-2 w-2">
                     <span
@@ -31,7 +31,7 @@
                 <span class="text-sm font-medium text-primary-900">
                     Trusted by Logan families for over 45 years
                 </span>
-            </div>
+            </h1>
 
             {{-- Main Heading --}}
             <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-900">
@@ -48,7 +48,7 @@
 
             {{-- CTA Buttons --}}
             <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                <a href="/"
+                <a href="{{ config('app.booking_url') }}" target="_blank"
                     class="group inline-flex items-center justify-center gap-2 bg-primary-800 hover:bg-primary-900 text-primary-50 font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     Book Appointment
                     <i class="fa-solid fa-arrow-right"></i>

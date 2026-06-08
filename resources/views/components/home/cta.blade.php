@@ -16,12 +16,12 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <a href="/"
+                <a href="{{ config('app.booking_url') }}" target="_blank"
                     class="group inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-primary-600 font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1">
                     Book an appointment
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <a href="/"
+                <a href="#doctors"
                     class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300">
                     Browse Doctors
                 </a>
