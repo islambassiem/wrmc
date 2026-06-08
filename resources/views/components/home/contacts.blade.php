@@ -15,12 +15,14 @@
                 </p>
             </div>
             <div>
-                <p class="text-xl">
+                <p class="text-xl mb-4">
                     <i class="fa-solid fa-clock text-primary-800"></i>
                     Working Hours
                 </p>
-                <p class="pl-8">
-                    Open 7 Days · 8:30 AM - 5:00 PM
+                <p class="pl-8 flex flex-col space-y-2">
+                    <span>Mon-Fri 8:30AM-5:00PM</span>
+                    <span>Sat-Sun 8:30AM-2:00PM</span>
+
                 </p>
             </div>
             <div>
