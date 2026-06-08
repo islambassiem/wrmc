@@ -121,7 +121,7 @@
 @endphp
 
 
-<section class="container mx-auto">
+<section class="container mx-auto scroll-mt-36" id="services">
     <p class="my-10 text-primary-950 text-center text-3xl md:text-5xl font-extrabold">Our services</p>
     <p class="my-5 text-primary-950 text-center text-xl md:text-3xl font-semibold max-w-xl mx-auto">We Treat These Conditions at
         Wembley Rd Medical Centre</p>

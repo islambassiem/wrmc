@@ -28,7 +28,7 @@
     ];
 @endphp
 
-<section class="container mx-auto">
+<section class="container mx-auto scroll-mt-36" id="doctors">
     <p class="my-10 text-primary-950 text-center text-3xl md:text-5xl font-extrabold">Meet our Doctors</p>
     <p class="my-5 text-primary-950 text-center text-xl md:text-3xl font-semibold max-w-xl mx-auto">Dedicated & Experienced Team</p>
 
