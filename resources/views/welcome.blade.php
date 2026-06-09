@@ -1,4 +1,4 @@
-<x-layout.page>
+<x-layouts.page>
     <x-home.hero />
     <x-home.stats />
     <x-home.medicare />
@@ -13,4 +13,4 @@
     <x-home.cta />
     <x-home.contacts />
     <x-home.footer />
-</x-layout.page>
+</x-layouts.page>
