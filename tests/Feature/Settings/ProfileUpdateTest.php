@@ -2,13 +2,13 @@
 
 use App\Models\User;
 
-test('profile page is displayed', function () {
+test('profile page is displayed', function (): void {
     $this->actingAs(User::factory()->create());
 
     $this->get('/admin/settings/profile')->assertOk();
 });
 
-test('profile information can be updated', function () {
+test('profile information can be updated', function (): void {
     $user = User::factory()->create();
 
     $response = $this
@@ -29,7 +29,7 @@ test('profile information can be updated', function () {
     expect($user->email_verified_at)->toBeNull();
 });
 
-test('email verification status is unchanged when email address is unchanged', function () {
+test('email verification status is unchanged when email address is unchanged', function (): void {
     $user = User::factory()->create();
 
     $response = $this
@@ -46,7 +46,7 @@ test('email verification status is unchanged when email address is unchanged', f
     expect($user->refresh()->email_verified_at)->not->toBeNull();
 });
 
-test('user can delete their account', function () {
+test('user can delete their account', function (): void {
     $user = User::factory()->create();
 
     $response = $this

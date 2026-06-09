@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -36,7 +37,7 @@ class VerificationController extends Controller
         }
 
         if ($request->user()->markEmailAsVerified()) {
-            /** @var \Illuminate\Contracts\Auth\MustVerifyEmail $user */
+            /** @var MustVerifyEmail $user */
             $user = $request->user();
 
             event(new Verified($user));

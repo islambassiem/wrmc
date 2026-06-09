@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 class SidebarController extends Controller
 {
-    public function getMenuData()
+    public function getMenuData(): Factory|View
     {
         $menuGroups = [
             [
@@ -186,6 +188,6 @@ class SidebarController extends Controller
             ],
         ];
 
-        return view('components.sidebar', compact('menuGroups'));
+        return view('components.sidebar', ['menuGroups' => $menuGroups]);
     }
 }
