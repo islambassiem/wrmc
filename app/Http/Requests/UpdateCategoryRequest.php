@@ -35,8 +35,8 @@ class UpdateCategoryRequest extends FormRequest
             ],
             'type' => [
                 'required',
-                Rule::in(CategoryType::cases())
-            ]
+                Rule::in(CategoryType::cases()),
+            ],
         ];
     }
 }

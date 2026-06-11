@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Settings\ProfileController;
-use App\Http\Controllers\Settings\PasswordController;
-
 use App\Http\Controllers\Auth\ConfirmationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Settings\PasswordController;
+use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->prefix('admin')->group(function (): void {
@@ -45,4 +44,3 @@ Route::middleware(['auth'])->prefix('admin')->group(function (): void {
 });
 
 Route::post('admin/logout', [LoginController::class, 'destroy'])->name('logout');
-

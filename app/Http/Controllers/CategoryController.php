@@ -6,10 +6,12 @@ use App\Actions\CreateCategoryAction;
 use App\Actions\UpdateCategoryAction;
 use App\Data\CategoryData;
 use App\Enums\CategoryType;
+use App\Enums\Permission;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class CategoryController extends Controller
@@ -19,22 +21,17 @@ class CategoryController extends Controller
      */
     public function index(): View
     {
+        Gate::authorize(Permission::CATEGORY_VIEW_ALL);
+
         $categories = Category::query()
             ->latest('updated_at')
             ->paginate(10);
         $types = CategoryType::cases();
+
         return view('pages.categories', [
             'types' => $types,
-            'categories' => $categories
+            'categories' => $categories,
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): void
-    {
-        //
     }
 
     /**
@@ -42,6 +39,8 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request): RedirectResponse
     {
+        Gate::authorize(Permission::CATEGORY_CREATE);
+
         resolve(CreateCategoryAction::class)->handle(
             new CategoryData(
                 name: $request->string('name'),
@@ -53,32 +52,17 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Category $category): void
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category): void
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateCategoryRequest $request, Category $category): RedirectResponse
     {
+        Gate::authorize(Permission::CATEGORY_UPDATE);
+
         resolve(UpdateCategoryAction::class)->handle(
             new CategoryData(
                 name: $request->string('name'),
                 type: CategoryType::from($request->string('type')),
-            )
-        , $category);
+            ), $category);
 
         return to_route('categories.index')->with('success', 'Category updated successfully');
     }

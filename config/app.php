@@ -125,6 +125,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'booking_url' => env('BOOKING_URL' ,'https://healthengine.com.au/webplugin/?id=60737'),
+    'booking_url' => env('BOOKING_URL', 'https://healthengine.com.au/webplugin/?id=60737'),
 
 ];

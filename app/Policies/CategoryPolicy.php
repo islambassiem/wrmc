@@ -15,7 +15,7 @@ class CategoryPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->hasPermissionTo(Permission::CATEGORY_VIEW_ALL);
     }
 
     /**

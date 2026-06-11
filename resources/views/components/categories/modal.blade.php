@@ -3,55 +3,26 @@
     'showCloseButton' => true,
 ])
 
-<div
-    x-data="categoryModal()",
-    @open-category-edit-modal.window="
-        open = true;
-        category = $event.detail.category;
-        action = $event.detail.action;
-        method = $event.detail.method;
-    "
-    @open-category-create-modal.window="
-        open = true;
-        category = {name: '', type: ''};
-        action = $event.detail.action;
-        method = $event.detail.method;
-    "
-    x-show="open"
-    x-cloak
-    @keydown.escape.window="open = false"
-    class="modal fixed inset-0 z-99999 flex items-center justify-center overflow-y-auto p-5"
-    {{ $attributes->except('class') }}
->
+<div class="modal fixed inset-0 z-99999 flex items-center justify-center overflow-y-auto p-5"
+    {{ $attributes->except('class') }}>
 
     {{-- Backdrop --}}
-    <div
-        @click="open = false"
-        class="fixed inset-0 h-full w-full bg-gray-400/50 backdrop-blur-[32px]"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0
+    <div @click="open = false" class="fixed inset-0 h-full w-full bg-gray-400/50 backdrop-blur-[32px]"
+        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0
     ">
     </div>
 
     {{-- Modal Content --}}
-    <div
-        @click.stop
-        class="relative w-full rounded-3xl bg-white dark:bg-gray-900 {{ $attributes->get('class') }}"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 transform scale-95"
-        x-transition:enter-end="opacity-100 transform scale-100"
-        x-transition:leave="transition ease-in duration-200"
+    <div @click.stop class="relative w-full rounded-3xl bg-white dark:bg-gray-900 {{ $attributes->get('class') }}"
+        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95"
+        x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100 transform scale-100"
-        x-transition:leave-end="opacity-0 transform scale-95"
-    >
+        x-transition:leave-end="opacity-0 transform scale-95">
 
         @if ($showCloseButton)
-            <button
-                @click="open = false"
+            <button @click="open = false"
                 class="absolute right-3 top-3 z-999 flex h-9.5 w-9.5 items-center justify-center rounded-full bg-gray-100 text-gray-400 transition-colors hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white sm:right-6 sm:top-6 sm:h-11 sm:w-11">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -74,53 +45,3 @@
         display: none;
     }
 </style>
-
-
-<script>
-    document.addEventListener('alpine:init', () => {
-    Alpine.data('categoryModal', () => ({
-        open: false,
-        category: {
-            name: '',
-            type: '',
-        },
-        action: null,
-        method: 'POST',
-        errors: {},
-        successMessage: null,
-
-        async submit(event) {
-            this.errors = {};
-
-            const form = event.target;
-            const formData = new FormData(form);
-
-            if (this.method !== 'POST') {
-                formData.append('_method', this.method);
-            }
-
-            const response = await fetch(this.action, {
-                method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Accept': 'application/json',
-                    'X-CSRF-TOKEN': document
-                        .querySelector('meta[name="csrf-token"]')
-                        .content,
-                },
-                body: formData,
-            });
-
-            if (response.status === 422) {
-                const data = await response.json();
-                this.errors = data.errors;
-                return;
-            }
-
-            if (response.ok) {
-                window.location.reload();
-            }
-        },
-    }));
-});
-</script>

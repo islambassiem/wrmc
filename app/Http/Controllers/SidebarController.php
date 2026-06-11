@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+
 class SidebarController extends Controller
 {
     public function getMenuData(): Factory|View

@@ -14,8 +14,7 @@ class CategoryData
     public function __construct(
         public string $name,
         public CategoryType $type,
-    )
-    {
+    ) {
         //
     }
 }

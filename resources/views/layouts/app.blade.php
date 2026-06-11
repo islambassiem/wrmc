@@ -106,7 +106,7 @@
     window.addEventListener('resize', checkMobile);">
 
     {{-- preloader --}}
-    <x-common.preloader/>
+    {{-- <x-common.preloader/> --}}
     {{-- preloader end --}}
 
     <div class="min-h-screen xl:flex">
@@ -122,7 +122,7 @@
             <!-- app header start -->
             @include('layouts.app-header')
             <!-- app header end -->
-            <div class="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">
+            <div class="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6 dark:text-white">
                 @yield('content')
             </div>
         </div>

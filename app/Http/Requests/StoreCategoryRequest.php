@@ -30,13 +30,13 @@ class StoreCategoryRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                'min:3'
+                'min:3',
 
             ],
             'type' => [
                 'required',
-                Rule::in(CategoryType::cases())
-            ]
+                Rule::in(CategoryType::cases()),
+            ],
         ];
     }
 }

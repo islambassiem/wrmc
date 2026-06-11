@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 
 /*
@@ -31,7 +34,7 @@ pest()->extend(TestCase::class)
 |
 */
 
-expect()->extend('toBeOne', fn() => $this->toBe(1));
+expect()->extend('toBeOne', fn () => $this->toBe(1));
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +47,11 @@ expect()->extend('toBeOne', fn() => $this->toBe(1));
 |
 */
 
-function something(): void
+function givePermissionToUserThroughRole(string $permission, User $user, string $role): void
 {
-    // ..
+    $permission = Permission::create(['name' => $permission]);
+    $role = Role::create(['name' => $role]);
+
+    $user->assignRole($role->name);
+    $role->givePermissionTo($permission);
 }

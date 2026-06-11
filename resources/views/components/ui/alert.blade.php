@@ -67,8 +67,8 @@
             @endif
 
             @if($showLink)
-                <a 
-                    href="{{ $linkHref }}" 
+                <a
+                    href="{{ $linkHref }}"
                     class="inline-block mt-3 text-sm font-medium text-gray-500 underline dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                 >
                     {{ $linkText }}

@@ -12,7 +12,8 @@ Route::get('/', fn (): Factory|View => view('welcome'))->name('home');
 
 Route::middleware(['auth'])->prefix('admin')->group(function (): void {
     Route::get('/dashboard', fn (): Factory|View => view('dashboard', ['title' => 'Dashboard']))->name('dashboard');
-    Route::resource('categories', CategoryController::class);
+    Route::resource('categories', CategoryController::class)
+        ->only('index', 'store', 'update');
     Route::resource('users', UserController::class);
 });
 

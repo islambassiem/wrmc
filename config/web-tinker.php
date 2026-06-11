@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Spatie\WebTinker\OutputModifiers\PrefixDateTime;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Session\Middleware\StartSession;
 use Spatie\WebTinker\Http\Middleware\Authorize;
+use Spatie\WebTinker\OutputModifiers\PrefixDateTime;
 
 return [
 
