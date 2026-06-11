@@ -12,6 +12,11 @@ class MenuHelper
                 'name' => 'Dashboard',
                 'path' => route('dashboard', absolute: false),
             ],
+            [
+                'icon' => 'dashboard',
+                'name' => 'Categories',
+                'path' => route('categories.index', absolute: false),
+            ],
         ];
     }
 
@@ -39,10 +44,10 @@ class MenuHelper
                 'title' => 'Menu',
                 'items' => self::getMainNavItems()
             ],
-            [
-                'title' => 'Administration',
-                'items' => self::getAdministrationItems()
-            ]
+            // [
+            //     'title' => 'Administration',
+            //     'items' => self::getAdministrationItems()
+            // ]
         ];
     }
 
