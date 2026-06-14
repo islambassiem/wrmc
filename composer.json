@@ -17,6 +17,7 @@
         "spatie/laravel-web-tinker": "^1.10"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^4.3",
         "driftingly/rector-laravel": "^2.5",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.0",

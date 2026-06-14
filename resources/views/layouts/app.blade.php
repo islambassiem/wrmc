@@ -106,7 +106,7 @@
     window.addEventListener('resize', checkMobile);">
 
     {{-- preloader --}}
-    {{-- <x-common.preloader/> --}}
+    <x-common.preloader/>
     {{-- preloader end --}}
 
     <div class="min-h-screen xl:flex">
@@ -115,8 +115,8 @@
 
         <div class="flex-1 transition-all duration-300 ease-in-out"
             :class="{
-                'xl:ml-[290px]': $store.sidebar.isExpanded || $store.sidebar.isHovered,
-                'xl:ml-[90px]': !$store.sidebar.isExpanded && !$store.sidebar.isHovered,
+                'xl:ml-72.5': $store.sidebar.isExpanded || $store.sidebar.isHovered,
+                'xl:ml-22.5': !$store.sidebar.isExpanded && !$store.sidebar.isHovered,
                 'ml-0': $store.sidebar.isMobileOpen
             }">
             <!-- app header start -->

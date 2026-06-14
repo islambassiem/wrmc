@@ -1,5 +1,5 @@
 @props([
-    'size' => 'md',          
+    'size' => 'md',
     'variant' => 'primary',
     'startIcon' => null,
     'endIcon' => null,
