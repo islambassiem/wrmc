@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             PostSeeder::class,
+            DoctorSeeder::class,
         ]);
 
         /** @var Role $role */

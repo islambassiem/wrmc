@@ -14,4 +14,10 @@ enum Permission: string
     case POST_CREATE = 'create_post';
     case POST_UPDATE = 'update_post';
     case POST_DELETE = 'delete_post';
+
+    case DOCTOR_VIEW_ALL = 'doctor_view_all';
+    case DOCTOR_CREATE = 'create_doctor';
+    case DOCTOR_UPDATE = 'update_doctor';
+    case DOCTOR_DELETE = 'delete_doctor';
+
 }
