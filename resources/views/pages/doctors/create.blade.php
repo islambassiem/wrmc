@@ -12,8 +12,7 @@
     </div>
 
     {{-- Form Card --}}
-    <form action="{{ route('doctors.store') }}" method="POST" enctype="multipart/form-data"
-        class="space-y-6">
+    <form action="{{ route('doctors.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
 
         {{-- ── Section 1: Basic Information ───────────────────────────── --}}
@@ -89,6 +88,68 @@
             </div>
         </div>
 
+        {{-- Employement dates --}}
+        <div
+            class="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center gap-3">
+                <span
+                    class="flex items-center justify-center w-7 h-7 rounded-lg bg-teal-50 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                </span>
+                <h2 class="text-sm font-semibold text-gray-700 dark:text-gray-200 uppercase tracking-wider">
+                    Employement</h2>
+            </div>
+
+            <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                {{-- Education --}}
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <label for="joining_date"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Joining Date</label>
+                    <div class="relative max-w-sm">
+                        <div class="absolute inset-y-0 inset-s-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
+                            </svg>
+                        </div>
+                        <input datepicker id="start-datepicker" type="text" name="joining_date" value="{{ old('joining_date') }}"
+                            class="block w-full ps-9 pe-3 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="Select date">
+                    </div>
+                    @error('joining_date')
+                        <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                {{-- Board Certifications --}}
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <label for="board_certifications"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Resignation Date</label>
+                    <div class="relative max-w-sm">
+                        <div class="absolute inset-y-0 inset-s-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
+                            </svg>
+                        </div>
+                        <input datepicker id="resignation-datepicker" type="text" name="resignation_date"  value="{{ old('resignation_date') }}"
+                            class="block w-full ps-9 pe-3  bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="Select date">
+                    </div>
+                    @error('board_certifications')
+                        <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+            </div>
+        </div>
+
         {{-- ── Section 2: Contact Information ─────────────────────────── --}}
         <div
             class="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden">
@@ -109,7 +170,7 @@
                 {{-- Email --}}
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                        Email Address <span class="text-red-500">*</span>
+                        Email Address
                     </label>
                     <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="doctor@clinic.com"
                         class="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 px-4 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition @error('email') border-red-400 dark:border-red-500 @enderror">

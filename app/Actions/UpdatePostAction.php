@@ -15,7 +15,7 @@ class UpdatePostAction
             'title' => $data->title,
             'body' => $data->body,
             'category_id' => $data->category_id,
-            'status' => $data->status
+            'status' => $data->status,
         ]);
 
         return $post;

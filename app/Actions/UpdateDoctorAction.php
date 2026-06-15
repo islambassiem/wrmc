@@ -2,17 +2,20 @@
 
 namespace App\Actions;
 
-use Throwable;
 use App\Data\DoctorData;
 use App\Models\Doctor;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Throwable;
 
 class UpdateDoctorAction
 {
     public function handle(DoctorData $data, Doctor $doctor): Doctor
     {
-        $path = $data->image?->store('doctors', 'public');
+        $path = $data->image?->storeAs(
+            'doctors',
+            Str::slug($data->name ?? $doctor->name).'.'.$data->image->getClientOriginalExtension(),
+            'public');
         $oldImage = $doctor->image;
 
         try {
@@ -20,6 +23,8 @@ class UpdateDoctorAction
                 'name' => $data->name,
                 'slug' => Str::slug($data->name ?? $doctor->name),
                 'title' => $data->title,
+                'joining_date' => $data->joining_date?->format('Y-m-d'),
+                'resignation_date' => $data->resignation_date?->format('Y-m-d'),
                 'email' => $data->email,
                 'mobile_phone' => $data->mobile_phone,
                 'office_phone' => $data->office_phone,

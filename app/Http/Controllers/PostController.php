@@ -107,7 +107,7 @@ class PostController extends Controller
                 title: $request->string('title')->value(),
                 body: $request->string('body')->value(),
                 category_id: $request->integer('category_id'),
-                status:$request->string('status'),
+                status: $request->string('status'),
             ), $post
         );
 

@@ -19,27 +19,32 @@ class DoctorSeeder extends Seeder
             [
                 'name' => 'Dr Ibrahim Elmezayen',
                 'title' => 'GP, MBBS',
-                'image' => 'assets/images/staff/Ibrahim_Elmezayen.webp',
+                'image' => 'doctors/'.Str::slug('Dr Ibrahim Elmezayen').'.webp',
+                'resignation_date' => null,
             ],
             [
                 'name' => 'Dr Abul Khondaker',
                 'title' => 'GP, MBBS, FRACGP',
-                'image' => 'assets/images/staff/Abul-Hashem-Khondaker.webp',
+                'image' => 'doctors/'.Str::slug('Dr Abul Khondaker').'.webp',
+                'resignation_date' => null,
             ],
             [
                 'name' => 'Dr Htay Thaung',
                 'title' => 'GP, MBBS, AMC, FRACGP',
-                'image' => 'assets/images/staff/Htay_Thaung.webp',
+                'image' => 'doctors/'.Str::slug('Dr Htay Thaung').'.webp',
+                'resignation_date' => null,
             ],
             [
                 'name' => 'Dr Mohammad Hafiz',
                 'title' => 'GP, MBBS, FRACGP',
-                'image' => 'assets/images/staff/Mohammad_Hafiz.webp',
+                'image' => 'doctors/'.Str::slug('Dr Mohammad Hafiz').'.webp',
+                'resignation_date' => null,
             ],
             [
                 'name' => 'Dr Farzana Rahman',
                 'title' => 'GP, MBBS, AMC, FRACGP',
-                'image' => 'assets/images/staff/Farzana_Rahman.webp',
+                'image' => 'doctors/'.Str::slug('Dr Farzana Rahman').'.webp',
+                'resignation_date' => null,
             ],
         ];
 
@@ -49,6 +54,7 @@ class DoctorSeeder extends Seeder
                 'slug' => Str::slug($doctor['name']),
                 'title' => $doctor['title'],
                 'image' => $doctor['image'],
+                'resignation_date' => $doctor['resignation_date'],
             ]);
         }
     }

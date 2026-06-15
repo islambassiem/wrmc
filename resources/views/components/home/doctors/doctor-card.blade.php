@@ -11,7 +11,7 @@
            mx-auto">
 
     <div class="aspect-square overflow-hidden rounded-2xl">
-        <img src="{{ $image }}" alt="{{ $name }}"
+        <img src="{{ Storage::url($image ?? 'doctors/default.gif') }}" alt="{{ $name }}"
             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 rounded-full">
     </div>
 

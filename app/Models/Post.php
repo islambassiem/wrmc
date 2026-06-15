@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-use Database\Factories\PostFactory;
 use App\Enums\PostStatus;
-use App\Models\Category;
+use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -44,7 +43,7 @@ class Post extends Model
     {
         return [
             'status' => PostStatus::class,
-            'body' => 'string'
+            'body' => 'string',
         ];
     }
 }

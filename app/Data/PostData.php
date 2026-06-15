@@ -15,8 +15,7 @@ class PostData
         public string $body,
         public int $category_id,
         public ?string $status,
-    )
-    {
+    ) {
         //
     }
 }

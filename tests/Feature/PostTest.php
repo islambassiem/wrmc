@@ -1,10 +1,10 @@
 <?php
 
-use App\Enums\Role;
 use App\Actions\CreatePostAction;
 use App\Actions\UpdatePostAction;
 use App\Data\PostData;
 use App\Enums\Permission;
+use App\Enums\Role;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
@@ -137,4 +137,3 @@ test('user can update a post', function (): void {
         'status' => $payload['status'],
     ]);
 });
-

@@ -6,7 +6,7 @@
     <x-home.why-us />
     <x-home.services />
     <x-home.ndis />
-    <x-home.doctors />
+    <x-home.doctors :doctors="$doctors" />
     <x-home.telehealth />
     <x-home.blog />
     <x-home.accepted-cards />

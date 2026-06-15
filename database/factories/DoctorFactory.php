@@ -23,6 +23,8 @@ class DoctorFactory extends Factory
             'slug' => Str::slug($name),
             'email' => fake()->unique()->safeEmail(),
             'title' => fake()->jobTitle(),
+            'joining_date' => $startDate = fake()->date(),
+            'resignation_date' => fake()->optional()->date($startDate),
             'mobile_phone' => fake()->phoneNumber(),
             'office_phone' => fake()->phoneNumber(),
             'bio' => fake()->paragraph(),

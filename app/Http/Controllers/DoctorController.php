@@ -8,6 +8,7 @@ use App\Data\DoctorData;
 use App\Http\Requests\StoreDoctorRequest;
 use App\Http\Requests\UpdateDoctorRequest;
 use App\Models\Doctor;
+use Carbon\CarbonImmutable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -18,10 +19,12 @@ class DoctorController extends Controller
      */
     public function index(): View
     {
-        $doctors = Doctor::query()->select('id', 'name', 'slug', 'title',  'image')->get();
+        $doctors = Doctor::query()
+            ->select('id', 'name', 'slug', 'title', 'image', 'resignation_date')
+            ->get();
 
-        return view('pages.doctors.index', [    
-            'doctors' => $doctors
+        return view('pages.doctors.index', [
+            'doctors' => $doctors,
         ]);
     }
 
@@ -43,6 +46,8 @@ class DoctorController extends Controller
                 name: $request->string('name'),
                 title: $request->string('title'),
                 email: $request->string('email'),
+                joining_date: $request->date('joining_date') ? CarbonImmutable::parse($request->date('joining_date')) : null,
+                resignation_date: $request->date('resignation_date') ? CarbonImmutable::parse($request->date('resignation_date')) : null,
                 mobile_phone: $request->string('mobile_phone'),
                 office_phone: $request->string('office_phone'),
                 bio: $request->string('bio'),
@@ -73,7 +78,7 @@ class DoctorController extends Controller
     public function edit(Doctor $doctor): View
     {
         return view('pages.doctors.edit', [
-            'doctor' => $doctor
+            'doctor' => $doctor,
         ]);
     }
 
@@ -87,6 +92,8 @@ class DoctorController extends Controller
                 name: $request->string('name'),
                 title: $request->string('title'),
                 email: $request->string('email'),
+                joining_date: $request->date('joining_date') ? CarbonImmutable::parse($request->date('joining_date')) : null,
+                resignation_date: $request->date('resignation_date') ? CarbonImmutable::parse($request->date('resignation_date')) : null,
                 mobile_phone: $request->string('mobile_phone'),
                 office_phone: $request->string('office_phone'),
                 bio: $request->string('bio'),

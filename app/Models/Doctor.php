@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
     'name',
     'slug',
     'title',
+    'joining_date',
+    'resignation_date',
     'email',
     'mobile_phone',
     'office_phone',

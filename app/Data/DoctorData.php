@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Data;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Http\UploadedFile;
 
 class DoctorData
@@ -15,6 +16,8 @@ class DoctorData
         public string $name,
         public ?string $title,
         public ?string $email,
+        public ?CarbonImmutable $joining_date,
+        public ?CarbonImmutable $resignation_date,
         public ?string $mobile_phone,
         public ?string $office_phone,
         public ?string $bio,
@@ -25,8 +28,7 @@ class DoctorData
         public ?int $years_of_experience,
         public ?string $quote,
 
-    )
-    {
+    ) {
         //
     }
 }
