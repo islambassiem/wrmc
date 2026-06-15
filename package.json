@@ -18,6 +18,7 @@
         "@fortawesome/fontawesome-free": "^7.2.0",
         "alpinejs": "^3.15.12",
         "flowbite": "^4.0.2",
-        "prismjs": "^1.30.0"
+        "prismjs": "^1.30.0",
+        "quill": "^2.0.3"
     }
 }

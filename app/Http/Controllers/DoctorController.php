@@ -43,20 +43,20 @@ class DoctorController extends Controller
     {
         resolve(CreateDoctorAction::class)->handle(
             new DoctorData(
-                name: $request->string('name'),
-                title: $request->string('title'),
-                email: $request->string('email'),
+                name: $request->string('name')->value(),
+                title: $request->string('title')->value(),
+                email: $request->string('email')->value(),
                 joining_date: $request->date('joining_date') ? CarbonImmutable::parse($request->date('joining_date')) : null,
                 resignation_date: $request->date('resignation_date') ? CarbonImmutable::parse($request->date('resignation_date')) : null,
-                mobile_phone: $request->string('mobile_phone'),
-                office_phone: $request->string('office_phone'),
-                bio: $request->string('bio'),
+                mobile_phone: $request->string('mobile_phone')->value(),
+                office_phone: $request->string('office_phone')->value(),
+                bio: $request->string('bio')->value(),
                 image: $request->file('image'),
-                education: $request->string('education'),
-                board_certifications: $request->string('board_certifications'),
-                field_of_expertise: $request->string('field_of_expertise'),
+                education: $request->string('education')->value(),
+                board_certifications: $request->string('board_certifications')->value(),
+                field_of_expertise: $request->string('field_of_expertise')->value(),
                 years_of_experience: $request->integer('years_of_experience'),
-                quote: $request->string('quote'),
+                quote: $request->string('quote')->value(),
             )
         );
 
@@ -89,20 +89,20 @@ class DoctorController extends Controller
     {
         resolve(UpdateDoctorAction::class)->handle(
             new DoctorData(
-                name: $request->string('name'),
-                title: $request->string('title'),
-                email: $request->string('email'),
+                name: $request->string('name')->value(),
+                title: $request->string('title')->value(),
+                email: $request->string('email')->value(),
                 joining_date: $request->date('joining_date') ? CarbonImmutable::parse($request->date('joining_date')) : null,
                 resignation_date: $request->date('resignation_date') ? CarbonImmutable::parse($request->date('resignation_date')) : null,
-                mobile_phone: $request->string('mobile_phone'),
-                office_phone: $request->string('office_phone'),
-                bio: $request->string('bio'),
+                mobile_phone: $request->string('mobile_phone')->value(),
+                office_phone: $request->string('office_phone')->value(),
+                bio: $request->string('bio')->value(),
                 image: $request->file('image'),
-                education: $request->string('education'),
-                board_certifications: $request->string('board_certifications'),
-                field_of_expertise: $request->string('field_of_expertise'),
+                education: $request->string('education')->value(),
+                board_certifications: $request->string('board_certifications')->value(),
+                field_of_expertise: $request->string('field_of_expertise')->value(),
                 years_of_experience: $request->integer('years_of_experience'),
-                quote: $request->string('quote'),
+                quote: $request->string('quote')->value(),
             ), $doctor
         );
 

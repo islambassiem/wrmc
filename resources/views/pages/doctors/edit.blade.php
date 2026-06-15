@@ -12,7 +12,8 @@
     </div>
 
     {{-- Form Card --}}
-    <form action="{{ route('doctors.update', $doctor) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+    <form action="{{ route('doctors.update', $doctor) }}" method="POST" id="update-doctor-form"
+        enctype="multipart/form-data" class="space-y-6">
         @csrf
         @method('PUT')
         {{-- ── Section 1: Basic Information ───────────────────────────── --}}
@@ -118,7 +119,8 @@
                                     d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
                             </svg>
                         </div>
-                        <input datepicker datepicker-format="yyyy-mm-dd" id="start-datepicker" type="text" name="joining_date" value="{{ old('joining_date', $doctor->joining_date) }}"
+                        <input datepicker datepicker-format="yyyy-mm-dd" id="start-datepicker" type="text"
+                            name="joining_date" value="{{ old('joining_date', $doctor->joining_date) }}"
                             class="block w-full ps-9 pe-3 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body"
                             placeholder="Select date">
                     </div>
@@ -139,7 +141,8 @@
                                     d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
                             </svg>
                         </div>
-                        <input datepicker datepicker-format="yyyy-mm-dd" id="resignation-datepicker" type="text" name="resignation_date" value="{{ $doctor->resignation_date }}"
+                        <input datepicker datepicker-format="yyyy-mm-dd" id="resignation-datepicker" type="text"
+                            name="resignation_date" value="{{ $doctor->resignation_date }}"
                             class="block w-full ps-9 pe-3  bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body"
                             placeholder="Select date">
                     </div>
@@ -273,8 +276,8 @@
                 <div>
                     <label for="bio"
                         class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Biography</label>
-                    <textarea id="bio" name="bio" rows="5" placeholder="Write a professional biography for this doctor..."
-                        class="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 px-4 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition resize-none @error('bio') border-red-400 dark:border-red-500 @enderror">{{ old('bio', $doctor->bio) }}</textarea>
+                    <div id="editor" style="height: 300px;"></div>
+                    <input type="hidden" name="bio" id="bio">
                     @error('bio')
                         <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
                     @enderror
@@ -366,24 +369,22 @@
 
 @push('scripts')
     <script>
-        // Live slug generation from name
-        // const nameInput = document.getElementById('name');
-        // const slugInput = document.getElementById('slug');
+        document.addEventListener('DOMContentLoaded', function () {
 
-        // nameInput.addEventListener('input', function () {
-        //     if (!slugInput.dataset.manuallyEdited) {
-        //         slugInput.value = this.value
-        //             .toLowerCase()
-        //             .trim()
-        //             .replace(/[^a-z0-9\s-]/g, '')
-        //             .replace(/\s+/g, '-');
-        //     }
-        // });
+            const editor = new Quill('#editor', {
+                theme: 'snow'
+            });
 
-        // slugInput.addEventListener('input', function () {
-        //     this.dataset.manuallyEdited = this.value ? 'true' : '';
-        // });
+            // Load existing content
+            editor.root.innerHTML = @json(old('bio', $doctor->bio));
 
+            const form = document.getElementById('update-doctor-form');
+            const hiddenInput = document.getElementById('bio');
+
+            form.addEventListener('submit', function () {
+                hiddenInput.value = editor.root.innerHTML;
+            });
+        });
         // Image preview
         function previewImage(event) {
             const file = event.target.files[0];
