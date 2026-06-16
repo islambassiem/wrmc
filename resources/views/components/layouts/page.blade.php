@@ -7,9 +7,11 @@
     <main class="font-sans" role="main" x-data="{open: false}">
         <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50" role="navigation">
             <div class="flex flex-col md:flex-row md:justify-between w-full ">
-                <div class="flex items-center justify-between gap-3 flex-1">
-                    <img src="{{ asset('assets/logo.webp') }}" alt="WRMC Logo"
-                        class="h-20 w-auto object-contain lg:h-36 lg:mx-0">
+                <div class="flex items-center justify-between gap-3 flex-1 ">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('assets/logo.webp') }}" alt="WRMC Logo"
+                            class="h-20 w-auto object-contain lg:h-36 lg:mx-0">
+                    </a>
                     <button @click="open = true" class="block mx-5 md:hidden" aria-label="Menu">
                         <i class="fa-solid fa-bars fa-lg"></i>
                     </button>

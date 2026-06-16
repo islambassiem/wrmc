@@ -15,7 +15,10 @@ use App\Models\Post;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -55,7 +58,10 @@ class PostController extends Controller
             ->select(['id', 'name'])
             ->get();
 
-        return view('pages.posts.create', ['categories' => $categories]);
+        return view('pages.posts.create', [
+            'categories' => $categories,
+            'sessionToken' => $this->sessionToken(),
+        ]);
     }
 
     /**
@@ -63,10 +69,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
+        Gate::authorize(Permission::POST_CREATE);
+
+        $body = $this->deleteUnusedFiles(
+            $request->string('body')->value(),
+            $request->string('session_token')->value()
+        );
+
         resolve(CreatePostAction::class)->handle(
             new PostData(
                 title: $request->string('title')->value(),
-                body: $request->string('body')->value(),
+                body: $body,
                 category_id: $request->integer('category_id'),
                 status: $request->string('status'),
             )
@@ -89,6 +102,7 @@ class PostController extends Controller
     public function edit(Post $post): View
     {
         return view('pages.posts.edit', [
+            'sessionToken' => $this->sessionToken(),
             'categories' => $this->categories(),
             'statuses' => $this->statuses(),
             'post' => $post,
@@ -102,10 +116,15 @@ class PostController extends Controller
     {
         Gate::authorize(Permission::POST_UPDATE);
 
+        $body = $this->deleteUnusedFiles(
+            $request->string('body')->value(),
+            $request->string('session_token')->value()
+        );
+
         resolve(UpdatePostAction::class)->handle(
             new PostData(
                 title: $request->string('title')->value(),
-                body: $request->string('body')->value(),
+                body: $body,
                 category_id: $request->integer('category_id'),
                 status: $request->string('status'),
             ), $post
@@ -140,5 +159,61 @@ class PostController extends Controller
     private function statuses(): array
     {
         return PostStatus::cases();
+    }
+
+    private function sessionToken(): string
+    {
+        $sessionToken = (string) Str::uuid();
+        session()->put('upload_session_token', $sessionToken);
+
+        return $sessionToken;
+    }
+
+    private function deleteUnusedFiles(string $body, string $sessionToken): string
+    {
+        preg_match_all('/<img[^>]+src="([^"]+)"/i', $body, $matches);
+        $usedUrls = $matches[1];
+
+        $tempUploads = DB::table('temp_uploads')->where('session_token', $sessionToken)->get();
+
+        $idsToDelete = [];
+
+        foreach ($tempUploads as $upload) {
+
+            if (empty($upload->path) || ! \is_string($upload->path)) {
+                continue;
+            }
+
+            $url = Storage::url($upload->path);
+
+            $normalizedStorageUrl = parse_url($url, PHP_URL_PATH);
+            $normalizedUsedUrls = array_map(fn ($u) => parse_url($u, PHP_URL_PATH), $usedUrls);
+
+            if (\in_array($normalizedStorageUrl, $normalizedUsedUrls)) {
+                $newPath = str_replace('temp/', 'posts/', $upload->path);
+
+                Storage::disk('public')->makeDirectory('posts');
+                Storage::disk('public')->move($upload->path, $newPath);
+
+                $newUrl = Storage::url($newPath);
+                $body = str_replace($url, $newUrl, $body);
+
+                $body = str_replace(
+                    url($url),
+                    url($newUrl),
+                    $body
+                );
+            } else {
+                Storage::disk('public')->delete($upload->path);
+            }
+
+            $idsToDelete[] = $upload->id;
+        }
+
+        DB::table('temp_uploads')->whereIn('id', $idsToDelete)->delete();
+
+        session()->forget('upload_session_token');
+
+        return $body;
     }
 }

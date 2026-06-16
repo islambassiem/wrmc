@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PostImageUploadController extends Controller
@@ -15,10 +16,13 @@ class PostImageUploadController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            // 2. Store the file to the 'public' disk inside an 'editor-uploads' directory
-            $path = $request->file('image')->store('posts', 'public');
 
-            // 3. Return the public asset URL back to Quill editor
+            $path = $request->file('image')->store('temp', 'public');
+
+            DB::table('temp_uploads')->insert([
+                'path' => $path,
+                'session_token' => $request->input('session_token')
+            ]);
             return response()->json([
                 'url' => $path ? Storage::url($path) : '',
             ], 200);

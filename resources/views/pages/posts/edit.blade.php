@@ -10,6 +10,7 @@
             class="flex flex-col border-b border-gray-200 p-5 dark:border-gray-800 space-y-8">
             @csrf
             @method('PUT')
+            <input type="hidden" name="session_token" value="{{ $sessionToken }}">
             <div class="sm:flex sm:justify-between sm:items-center sm:gap-6 sm:flex-1 mb-2">
                 <div class="w-full">
                     <label for="categories" class="mb-2.5 text-sm font-medium text-heading">Select
@@ -143,7 +144,9 @@
 
             function uploadImage(file) {
                 const formData = new FormData;
+                const sessionToken = document.querySelector('input[name="session_token"]').value;
                 formData.append('image', file);
+                formData.append('session_token', sessionToken);
                 fetch("{{ route('uploadImage') }}", {
                         method: 'POST',
                         headers: {
