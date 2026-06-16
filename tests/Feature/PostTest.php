@@ -80,10 +80,10 @@ test('user can view update post page', function (): void {
         $user = User::factory()->create(),
         Role::ADMIN->value
     );
-    Post::factory()->create();
+    $post = Post::factory()->create();
     $this
         ->actingAs($user)
-        ->get('/admin/posts/1/edit')
+        ->get(route('posts.edit', $post->slug))
         ->assertOk()
         ->assertViewIs('pages.posts.edit');
 });
@@ -129,7 +129,7 @@ test('user can update a post', function (): void {
 
     $this
         ->actingAs($user)
-        ->put(route('posts.update', Post::factory()->create()->id), $payload)
+        ->put(route('posts.update', Post::factory()->create()->slug), $payload)
         ->assertRedirect(route('posts.index'));
 
     $this->assertDatabaseHas('posts', [

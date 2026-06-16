@@ -12,7 +12,7 @@ class PostImageUploadController extends Controller
     public function __invoke(Request $request): JsonResponse
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:2048'],
         ]);
 
         if ($request->hasFile('image')) {
@@ -21,8 +21,9 @@ class PostImageUploadController extends Controller
 
             DB::table('temp_uploads')->insert([
                 'path' => $path,
-                'session_token' => $request->input('session_token')
+                'session_token' => $request->input('session_token'),
             ]);
+
             return response()->json([
                 'url' => $path ? Storage::url($path) : '',
             ], 200);

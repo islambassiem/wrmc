@@ -180,14 +180,18 @@ class PostController extends Controller
 
         foreach ($tempUploads as $upload) {
 
-            if (empty($upload->path) || ! \is_string($upload->path)) {
+            if (empty($upload->path)) {
+                continue;
+            }
+
+            if (! \is_string($upload->path)) {
                 continue;
             }
 
             $url = Storage::url($upload->path);
 
             $normalizedStorageUrl = parse_url($url, PHP_URL_PATH);
-            $normalizedUsedUrls = array_map(fn ($u) => parse_url($u, PHP_URL_PATH), $usedUrls);
+            $normalizedUsedUrls = array_map(fn ($u): string|false|null => parse_url($u, PHP_URL_PATH), $usedUrls);
 
             if (\in_array($normalizedStorageUrl, $normalizedUsedUrls)) {
                 $newPath = str_replace('temp/', 'posts/', $upload->path);

@@ -19,4 +19,4 @@ class CreatePostAction
             'category_id' => $data->category_id,
         ]);
     }
-}   
+}

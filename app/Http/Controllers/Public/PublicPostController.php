@@ -17,7 +17,7 @@ class PublicPostController extends Controller
                 ->where('category_id', $post->category_id)
                 ->where('id', '!=', $post->id)
                 ->where('status', PostStatus::PUBLISHED->value)
-                ->selectRaw("id, title, slug, substr(body, 1, 150) as body")
+                ->selectRaw('id, title, slug, substr(body, 1, 150) as body')
                 ->limit(3)
                 ->get(),
         ]);

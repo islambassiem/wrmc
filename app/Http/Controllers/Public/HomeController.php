@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Public;
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use App\Models\Post;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
-use App\Enums\PostStatus;
 
 class HomeController extends Controller
 {
@@ -39,16 +39,16 @@ class HomeController extends Controller
      */
     private function posts(): Collection
     {
-        $posts =  Post::query()
+        $posts = Post::query()
             ->where('status', PostStatus::PUBLISHED->value)
             ->select('id', 'title', 'slug', 'image')
-            ->selectRaw("substr(body, 1, 150) as body")
+            ->selectRaw('substr(body, 1, 150) as body')
             ->orderBy('updated_by', 'desc')
             ->limit(4)
             ->get();
 
-        return $posts->each(function ($post) {
-            $post->body = strip_tags($post->body);
+        return $posts->each(function ($post): void {
+            $post->body = strip_tags((string) $post->body);
         });
     }
 }
