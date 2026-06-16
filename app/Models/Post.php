@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Fillable([
     'title',
+    'slug',
     'body',
     'status',
     'category_id',
@@ -20,6 +21,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property int $id
  * @property string $title
+ * @property string $slug
  * @property string $body
  * @property string $status
  * @property int $category_id
@@ -39,11 +41,16 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
-    protected function casts(): array
+    public function casts(): array
     {
         return [
             'status' => PostStatus::class,
             'body' => 'string',
         ];
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

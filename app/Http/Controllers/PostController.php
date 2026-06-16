@@ -33,7 +33,7 @@ class PostController extends Controller
                 $query->where('status', $request->input('status'));
             })
             ->with('category')
-            ->select(['id', 'title', 'status', 'category_id', 'created_at', 'updated_at'])
+            ->select(['id', 'title', 'status', 'category_id', 'slug', 'created_at', 'updated_at'])
             ->latest('updated_at')
             ->paginate(10)
             ->withQueryString();

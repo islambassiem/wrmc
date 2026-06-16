@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Post;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
+use App\Enums\PostStatus;
 
 class HomeController extends Controller
 {
@@ -14,6 +16,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'doctors' => $this->doctors(),
+            'posts' => $this->posts(),
         ]);
     }
 
@@ -29,5 +32,23 @@ class HomeController extends Controller
             })
             ->select('id', 'name', 'slug', 'title', 'image')
             ->get();
+    }
+
+    /**
+     * @return Collection<int, Post>
+     */
+    private function posts(): Collection
+    {
+        $posts =  Post::query()
+            ->where('status', PostStatus::PUBLISHED->value)
+            ->select('id', 'title', 'slug', 'image')
+            ->selectRaw("substr(body, 1, 150) as body")
+            ->orderBy('updated_by', 'desc')
+            ->limit(4)
+            ->get();
+
+        return $posts->each(function ($post) {
+            $post->body = strip_tags($post->body);
+        });
     }
 }

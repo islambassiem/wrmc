@@ -8,7 +8,9 @@
     <x-home.ndis />
     <x-home.doctors :doctors="$doctors" />
     <x-home.telehealth />
-    <x-home.blog />
+    @if ($posts->count())
+        <x-home.blog :posts="$posts" />
+    @endif
     <x-home.accepted-cards />
     <x-home.cta />
     <x-home.contacts />

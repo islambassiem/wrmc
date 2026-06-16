@@ -8,6 +8,7 @@ use App\Enums\PostStatus;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory<Post>
@@ -22,7 +23,8 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(15, true),
+            'title' => $title = fake()->sentence(15, true),
+            'slug' => Str::slug($title),
             'body' => fake()->paragraphs(10, true),
             'status' => fake()->randomElement(PostStatus::cases()),
             'category_id' => Category::factory(),

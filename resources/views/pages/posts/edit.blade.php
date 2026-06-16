@@ -6,7 +6,7 @@
     <x-common.page-breadcrumb pageTitle="Edit Post" />
     <div class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/3">
 
-        <form method="POST" action="{{ route('posts.update', $post->id) }}" id="update-post-form"
+        <form method="POST" action="{{ route('posts.update', $post->slug) }}" id="update-post-form"
             class="flex flex-col border-b border-gray-200 p-5 dark:border-gray-800 space-y-8">
             @csrf
             @method('PUT')
