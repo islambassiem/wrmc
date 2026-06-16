@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Public;
 
+use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Collection;

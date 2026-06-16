@@ -11,22 +11,22 @@
             Home
         </a>
 
-        <a href="#services" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
+        <a href="{{ route('home') . '#services'}}" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
             <i class="fa-solid fa-kit-medical text-primary-800 "></i>
             Services
         </a>
 
-        <a href="#doctors" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
+        <a href="{{ route('home') . '#doctors' }}" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
             <i class="fa-solid fa-user-doctor text-primary-800 "></i>
             Team
         </a>
 
-        <a href="#blog" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
+        <a href="{{ route('home') . '#blog' }}" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
             <i class="fa-solid fa-blog text-primary-800 "></i>
             Blog
         </a>
 
-        <a href="#contacts" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
+        <a href="{{ route('home') . '#contacts' }}" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
             <i class="fa-solid fa-phone text-primary-800 "></i>
             Contact
         </a>

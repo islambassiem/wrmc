@@ -244,3 +244,5 @@
         background-size: 50px 50px;
     }
 }
+
+[x-cloak] { display: none !important; }

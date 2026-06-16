@@ -1,6 +1,6 @@
 @props(['name', 'title', 'image'])
 
-<div
+<a href="{{ route('doctor.show', Str::slug($name)) }}"
     class="flex flex-col h-full
            bg-white
            rounded-3xl
@@ -22,22 +22,4 @@
     <p class="text-gray-600 text-center">
         {{ $title }}
     </p>
-
-    {{-- <div class="flex gap-8 mx-auto mt-auto pt-4">
-        <a href="#" target="_blank">
-            <i class="fa-brands fa-square-instagram fa-xl duration-300 hover:text-primary-500"></i>
-        </a>
-
-        <a href="#" target="_blank">
-            <i class="fa-brands fa-facebook fa-xl duration-300 hover:text-primary-500"></i>
-        </a>
-
-        <a href="#" target="_blank">
-            <i class="fa-brands fa-x-twitter fa-xl duration-300 hover:text-primary-500"></i>
-        </a>
-
-        <a href="#" target="_blank">
-            <i class="fa-brands fa-linkedin fa-xl duration-300 hover:text-primary-500"></i>
-        </a>
-    </div> --}}
-</div>
+</a>

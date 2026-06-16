@@ -4,6 +4,7 @@ use App\Actions\CreatePostAction;
 use App\Actions\UpdatePostAction;
 use App\Data\PostData;
 use App\Enums\Permission;
+use App\Enums\PostStatus;
 use App\Enums\Role;
 use App\Models\Category;
 use App\Models\Post;
@@ -24,7 +25,7 @@ test('action can create a post', function (): void {
 
     expect($post->title)->toBe($payload['title']);
     expect($post->body)->toBe($payload['body']);
-    expect($post->status)->toBe($payload['status']);
+    expect($post->status->value)->toBe(PostStatus::DRAFT->value);
     expect($post->category_id)->toBe($payload['category_id']);
 });
 

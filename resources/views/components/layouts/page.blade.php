@@ -13,7 +13,7 @@
                     <button @click="open = true" class="block mx-5 md:hidden" aria-label="Menu">
                         <i class="fa-solid fa-bars fa-lg"></i>
                     </button>
-                    <div x-show="open" x-transition.opacity class="fixed inset-0 z-40">
+                    <div x-show="open" x-cloak x-transition.opacity class="fixed inset-0 z-40">
                         <!-- Backdrop -->
                         <div @click="open = false" class="absolute inset-0 bg-black/50"></div>
 
@@ -29,13 +29,13 @@
                     <div class="hidden md:flex items-center mx-auto gap-4 lg:gap-5 p-4 flex-1">
                         <a href="/"
                             class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Home</a>
-                        <a href="#services"
+                        <a href="{{ route('home') . '#services'}}"
                             class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Services</a>
-                        <a href="#doctors"
+                        <a href="{{ route('home') . '#doctors' }}"
                             class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Team</a>
-                        <a href="#blog"
+                        <a href="{{ route('home') . '#blog' }}"
                             class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Blog</a>
-                        <a href="#contacts"
+                        <a href="{{ route('home') . '#contacts' }}"
                             class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Contact</a>
                     </div>
                 </div>
