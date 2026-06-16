@@ -12,7 +12,7 @@
         </div>
     @endif
     <div class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/3">
-        <form method="POST" action="{{ route('posts.store') }}"
+        <form method="POST" action="{{ route('posts.store') }}" id="create-post-form"
             class="flex flex-col border-b border-gray-200 p-5 dark:border-gray-800 space-y-8">
             @csrf
 
@@ -31,11 +31,15 @@
             <label for="message" class="block my-2.5 text-sm font-medium text-heading">Post Title</label>
             <x-forms.input type="text" name="title" placeholder="Post Title" />
 
-            <label for="message" class="block my-2.5 text-sm font-medium text-heading">Post Body</label>
-            <textarea id="message" rows="4" name="body"
-                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body"
-                placeholder="Write your thoughts here...">
-                            </textarea>
+            <div>
+                <label for="content" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Post
+                    Body</label>
+                <div id="editor" style="height: 300px;"></div>
+                <input type="hidden" name="body" id="content">
+                @error('body')
+                    <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
 
             <x-ui.button type="submit" class="mt-4 self-end">Submit</x-ui.button>
 
@@ -43,3 +47,108 @@
     </div>
 
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toolbarOptions = [
+                [{
+                    'font': []
+                }],
+                [{
+                    'size': ['small', false, 'large', 'huge']
+                }], // custom dropdown
+                [{
+                    'header': [2, 3, 4, 5, 6, false]
+                }],
+                ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+                ['blockquote'],
+                ['link'],
+                ['image'],
+                [{
+                    'list': 'ordered'
+                }, {
+                    'list': 'bullet'
+                }, {
+                    'list': 'check'
+                }],
+                [{
+                    'script': 'sub'
+                }, {
+                    'script': 'super'
+                }], // superscript/subscript
+                [{
+                    'indent': '-1'
+                }, {
+                    'indent': '+1'
+                }], // outdent/indent
+                [{
+                    'color': []
+                }, {
+                    'background': []
+                }], // dropdown with defaults from theme
+                [{
+                    'align': []
+                }],
+
+                ['clean'] // remove formatting button
+            ];
+            const editor = new Quill('#editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: {
+                        container: toolbarOptions,
+                        handlers: {
+                            image: function (){
+                                selectLocalImage()
+                            }
+                        }
+                    }
+                },
+                placeholder: 'The content of the post...',
+            });
+
+            const form = document.getElementById('create-post-form');
+            const hiddenInput = document.querySelector('#content');
+
+            form.addEventListener('submit', function() {
+                hiddenInput.value = editor.root.innerHTML;
+            });
+
+
+            function selectLocalImage(){
+                const input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+                input.click();
+
+                input.onchange = () => {
+                    const file = input.files[0];
+                    if(file){
+                        uploadImage(file);
+                    }else{
+                        console.log('no file');
+                    }
+                }
+            }
+
+            function uploadImage(file){
+                const formData = new FormData;
+                formData.append('image', file);
+                fetch("{{ route('uploadImage') }}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(result => {
+                    const range = editor.getSelection();
+                    editor.insertEmbed(range.index, 'image', result.url);
+                })
+                .catch(err => console.error(err));
+            }
+        });
+    </script>
+@endpush
