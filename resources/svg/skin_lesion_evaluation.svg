@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Skin -->
+    <path d="M8 5c2-2 6-2 8 0s2 6 0 10-6 6-8 0-2-8 0-10z" />
+
+    <!-- Lesion -->
+    <circle cx="12" cy="12" r="1.4" />
+
+    <!-- Clinical checkmark (evaluation result) -->
+    <path d="M10.5 12.2l1 1 2.5-2.5" />
+
+    <!-- Stethoscope-style diagnostic loop (subtle evaluation cue) -->
+    <path d="M18 6.5c1 1 1 2 0 3s-2 1-2.5 0" />
+</svg>

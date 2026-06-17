@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Female symbol -->
+    <circle cx="12" cy="9" r="4" />
+
+    <!-- Shield (screening / prevention) -->
+    <path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" />
+
+    <!-- Check mark (screening result) -->
+    <path d="M10.5 9.5l1 1 2-2" />
+</svg>

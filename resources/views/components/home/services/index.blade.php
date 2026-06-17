@@ -1,60 +1,64 @@
 @php
     $items = [
         [
-            'title' => 'Common illnesses',
+            'title' => 'Family Medicine - all doctors',
             'subitems' => [
                 [
-                    'title' => 'Cold & Flu',
-                    'svg' => 'cold-flu',
+                    'title' => 'Routine medical care',
+                    'svg' => 'routine_medical_care',
                 ],
                 [
-                    'title' => 'Ear Infections',
-                    'svg' => 'ear-infections',
+                    'title' => 'Hypertension management',
+                    'svg' => 'hypertension_management',
                 ],
                 [
-                    'title' => 'Eye Infections',
-                    'svg' => 'eye-infections',
+                    'title' => 'Cold & flu treatment',
+                    'svg' => 'cold_flu_treatment',
                 ],
                 [
-                    'title' => 'Sore Throat',
-                    'svg' => 'sore-throat',
+                    'title' => 'Respiratory and asthma care',
+                    'svg' => 'respiratory_and_asthma_care',
                 ],
                 [
-                    'title' => 'Respiratory Infections',
-                    'svg' => 'respiratory-infections',
+                    'title' => 'Mental health support',
+                    'svg' => 'mental_health_support',
                 ],
                 [
-                    'title' => 'Fever Management',
-                    'svg' => 'fever-management',
+                    'title' => 'Joint pain assessment',
+                    'svg' => 'joint_pain_assessment',
                 ],
-            ],
-        ],
-        [
-            'title' => 'Chronic & ongoing conditions',
-            'subitems' => [
+                [
+                    'title' => 'Chronic Disease Management',
+                    'svg' => 'chronic_disease_management',
+                ],
+                [
+                    'title' => 'Diabetes',
+                    'svg' => 'diabetes',
+                ],
+                [
+                    'title' => 'Hypertension',
+                    'svg' => 'hypertension',
+                ],
                 [
                     'title' => 'Asthma',
                     'svg' => 'asthma',
                 ],
+            ],
+        ],
+        [
+            'title' => 'Skin Clinic',
+            'subitems' => [
                 [
-                    'title' => 'Diabetes Management',
-                    'svg' => 'diabetes-management',
+                    'title' => 'Skin cancer screening',
+                    'svg' => 'skin_cancer_screening',
                 ],
                 [
-                    'title' => 'Blood Pressure',
-                    'svg' => 'blood-pressure',
+                    'title' => 'Skin lesion evaluation',
+                    'svg' => 'skin_lesion_evaluation',
                 ],
                 [
-                    'title' => 'Mental Health',
-                    'svg' => 'mental-health',
-                ],
-                [
-                    'title' => 'Joint Pain',
-                    'svg' => 'joint-pain',
-                ],
-                [
-                    'title' => 'Back Pain',
-                    'svg' => 'back-pain',
+                    'title' => 'Minor skin procedures',
+                    'svg' => 'minor_skin_procedures',
                 ],
             ],
         ],
@@ -63,57 +67,82 @@
             'subitems' => [
                 [
                     'title' => 'Paediatric Care',
-                    'svg' => 'pediatric-care',
+                    'svg' => 'paediatric_care',
                 ],
                 [
-                    'title' => "Women's Health",
-                    'svg' => 'womens-health',
-                ],
-
-                [
-                    'title' => "Men's Health",
-                    'svg' => 'mens-health',
+                    'title' => 'Pap smear testing',
+                    'svg' => 'pap_smear_testing',
                 ],
                 [
-                    'title' => 'Family Medicine',
-                    'svg' => 'family-medicine',
+                    'title' => 'Cervical cancer screening',
+                    'svg' => 'cervical_cancer_screening',
                 ],
                 [
-                    'title' => 'Travel Vaccinations',
-                    'svg' => 'travel-vaccinations',
+                    'title' => 'Menstrual health concerns',
+                    'svg' => 'menstrual_health_concerns',
                 ],
                 [
-                    'title' => 'Immunisations',
-                    'svg' => 'immunisations',
+                    'title' => 'Prenatal and pregnancy follow-up',
+                    'svg' => 'prenatal_and_pregnancy_follow-up',
                 ],
             ],
         ],
         [
-            'title' => 'Family & preventive care',
+            'title' => 'Pediatric Care',
             'subitems' => [
                 [
-                    'title' => 'Skin Checks',
-                    'svg' => 'skin-checks',
+                    'title' => 'Child wellness exams',
+                    'svg' => 'child_wellness_exams',
                 ],
                 [
-                    'title' => 'Skin Lesions',
-                    'svg' => 'skin-lesions',
+                    'title' => 'Vaccinations and immunizations',
+                    'svg' => 'vaccinations_and_immunizations',
                 ],
                 [
-                    'title' => 'Work Medicals',
-                    'svg' => 'work-medicals',
+                    'title' => 'Circumcision services',
+                    'svg' => 'circumcision_services',
+                ],
+            ],
+        ],
+        [
+            'title' => 'Infusion & Specialized Care',
+            'subitems' => [
+                [
+                    'title' => 'Iron infusions',
+                    'svg' => 'iron_infusions',
                 ],
                 [
-                    'title' => 'Urgent Care',
-                    'svg' => 'urgent-care',
+                    'title' => 'Pain management',
+                    'svg' => 'pain_management',
                 ],
                 [
-                    'title' => 'Minor Injuries',
-                    'svg' => 'minor-injuries',
+                    'title' => 'Wound care',
+                    'svg' => 'wound_care',
                 ],
                 [
-                    'title' => 'Pain Relief',
-                    'svg' => 'pain-relief',
+                    'title' => 'Catheter care',
+                    'svg' => 'catheter_care',
+                ],
+                [
+                    'title' => 'Pre-employment assessment',
+                    'svg' => 'pre-employment_assessment',
+                ],
+                [
+                    'title' => "Driver's license checks",
+                    'svg' => "drivers_license_checks",
+                ],
+            ],
+        ],
+        [
+            'title' => "Men's Health",
+            'subitems' => [
+                [
+                    'title' => 'Preventive health screening',
+                    'svg' => 'preventive_health_screening',
+                ],
+                [
+                    'title' => "General men's health concerns",
+                    'svg' => "general_mens_health_concerns",
                 ],
             ],
         ],
@@ -123,24 +152,21 @@
 
 <section class="container mx-auto scroll-mt-36" id="services">
     <p class="my-10 text-primary-950 text-center text-3xl md:text-5xl font-extrabold">Our services</p>
-    <p class="my-5 text-primary-950 text-center text-xl md:text-3xl font-semibold max-w-xl mx-auto">We Treat These Conditions at
+    <p class="my-5 text-primary-950 text-center text-xl md:text-3xl font-semibold max-w-xl mx-auto">We Treat These
+        Conditions at
         Wembley Rd Medical Centre</p>
-    <p class="my-5 text-primary-950 text-center text-md md:text-2xl font-bold">Our experienced GPs treat a wide range of conditions
+    <p class="my-5 text-primary-950 text-center text-md md:text-2xl font-bold">Our experienced GPs treat a wide range of
+        conditions
         for patients of all ages. Click any condition to learn more.
     </p>
-    {{-- {!!  (file_get_contents(resource_path("svg/cold-flu.svg"))) !!} --}}
-    <div class="flex flex-col mb-10 mx-5">
-        @foreach ($items as $item)
-            <x-home.services.illness :title="$item['title']" :subitems="$item['subitems']" />
+
+    <div class="flex flex-col mb-10 mx-5" x-data="{ active: 0 }">
+        @foreach ($items as $index => $item)
+            <x-home.services.illness :index="$index" :title="$item['title']" :subitems="$item['subitems']" />
         @endforeach
     </div>
 
     <div class="flex flex-col items-center justify-center gap-4 mb-12">
-        <a href="/"
-            class="group inline-flex items-center justify-center gap-2 bg-primary-800 hover:bg-primary-900 text-primary-50 font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            View all conditions & services
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
         <span class="text-sm text-gray-600">
             * Bulk billing available for eligible Medicare patients
         </span>

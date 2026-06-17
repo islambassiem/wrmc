@@ -28,17 +28,17 @@
                             <x-home.modal />
                         </div>
                     </div>
-                    <div class="hidden md:flex items-center mx-auto gap-4 lg:gap-5 p-4 flex-1">
+                    <div class="hidden md:flex items-center mx-auto gap-4 lg:gap-5 p-4 flex-1 font-serif  text-2xl">
                         <a href="/"
-                            class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Home</a>
+                            class="uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Home</a>
                         <a href="{{ route('home') . '#services'}}"
-                            class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Services</a>
+                            class="uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Services</a>
                         <a href="{{ route('home') . '#doctors' }}"
-                            class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Team</a>
+                            class="uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Team</a>
                         <a href="{{ route('home') . '#blog' }}"
-                            class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Blog</a>
+                            class="uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">News</a>
                         <a href="{{ route('home') . '#contacts' }}"
-                            class="text-lg uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Contact</a>
+                            class="uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Contact</a>
                     </div>
                 </div>
                 <a href="{{ config('app.booking_url') }}" target="_blank"

@@ -1,5 +1,5 @@
 <section
-    class="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-primary-50 via-white to-teal-50">
+    class="relative min-h-screen flex items-center overflow-hidden bg-primary-100">
     {{-- Animated Background Elements --}}
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         {{-- Gradient Orbs --}}
@@ -36,7 +36,7 @@
             {{-- Main Heading --}}
             <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-900">
                 Logan Central's
-                <span class="italic text-primary-600">Family Medical</span>
+                <span class="italic text-yellow-500">Family Medical</span>
                 Centre
             </h1>
 

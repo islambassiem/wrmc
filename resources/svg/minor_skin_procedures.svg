@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Skin surface -->
+    <path d="M7 6c2-2 8-2 10 0s2 6 0 10-8 6-10 0-2-8 0-10z" />
+
+    <!-- Lesion / target point -->
+    <circle cx="12" cy="12" r="1.2" />
+
+    <!-- Scalpel -->
+    <path d="M16 7l3 3" />
+    <path d="M14.5 8.5l4 4" />
+    <path d="M13.5 9.5l1-1" />
+
+    <!-- Procedure cut line -->
+    <path d="M10 14l2 2 2-2" />
+</svg>

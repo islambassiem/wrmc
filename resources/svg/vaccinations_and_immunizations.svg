@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Shield (immunity/protection) -->
+    <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" />
+
+    <!-- Syringe -->
+    <path d="M8 14l6-6" />
+    <path d="M7 15l2 2" />
+    <path d="M10 12l2 2" />
+    <path d="M13 9l2 2" />
+    <path d="M15 7l2 2" />
+
+    <!-- Plunger -->
+    <path d="M6 16l2 2" />
+
+    <!-- Protection check -->
+    <path d="M10.5 12.5l1 1 2-2" />
+</svg>

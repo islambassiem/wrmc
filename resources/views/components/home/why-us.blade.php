@@ -1,7 +1,7 @@
 <section class="container mx-auto bg-gray-50 py-10">
     <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="p-3">
-            <img src="{{ asset('assets/images/why-us.webp') }}" alt="">
+            <img src="{{ asset('assets/images/why-us.webp') }}" alt="why-us">
         </div>
         <div class="flex flex-col items-center justify-center">
             <p class="my-10 text-4xl text-primary-500">WHY US</p>

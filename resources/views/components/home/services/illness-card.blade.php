@@ -9,7 +9,7 @@
            hover:bg-primary-50
            transition-all duration-300">
     @if ($svg)
-        <x-icon :name="$svg" class="w-5 h-5" />
+        <x-icon :name="$svg" class="size-8" />
     @endif
 
     <span>

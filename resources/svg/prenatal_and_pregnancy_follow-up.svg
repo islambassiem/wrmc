@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Pregnancy silhouette -->
+    <circle cx="12" cy="7" r="2.5" />
+    <path d="M12 10c-2 0-3.5 2-3.5 4v3c0 2 1.5 4 3.5 4s3.5-2 3.5-4v-3c0-2-1.5-4-3.5-4z" />
+
+    <!-- Heart (care/support) -->
+    <path d="M8 15h2l1-2 2 4 1-2h2" />
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Speech bubble -->
+    <path
+        d="M6 18l-2 2v-4a7 7 0 0 1-1-3.5A7.5 7.5 0 0 1 10.5 5h3A7.5 7.5 0 0 1 21 12.5A7.5 7.5 0 0 1 13.5 20H8z" />
+
+    <!-- Heart -->
+    <path d="M12 15s-2-1.2-2.8-2.7A1.6 1.6 0 0 1 12 10.8a1.6 1.6 0 0 1 2.8 1.5C14 13.8 12 15 12 15z" />
+</svg>

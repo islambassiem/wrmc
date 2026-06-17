@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <!-- Blood pressure cuff -->
+    <rect x="3" y="8" width="7" height="8" rx="2" />
+
+    <!-- Tube -->
+    <path d="M10 12h3c2 0 3 1 4 2" />
+
+    <!-- Gauge -->
+    <circle cx="18" cy="10" r="3" />
+    <path d="M18 10l1.2-1.2" />
+
+    <!-- Heart pulse -->
+    <path d="M7 14h1.5l1-2 1.5 4 1-2h2" />
+</svg>
