@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('slug');
             $table->longText('body');
             $table->string('status');
-            $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->foreignId('Updated_by')->nullable()->constrained('users');
             $table->timestamps();

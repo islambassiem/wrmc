@@ -16,20 +16,8 @@
             class="flex flex-col border-b border-gray-200 p-5 dark:border-gray-800 space-y-8">
             @csrf
             <input type="hidden" name="session_token" value="{{ $sessionToken }}">
-            <div class="flex-1">
-                <label for="categories" class="mb-2.5 text-sm font-medium text-heading">Select category</label>
-                <select id="categories" name="category_id"
-                    class="block w-lg px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
-                    <option value="" selected>Select All</option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" @selected($category->id === request()->integer('category_id'))>
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
             <label for="message" class="block my-2.5 text-sm font-medium text-heading">Post Title</label>
-            <x-forms.input type="text" name="title" placeholder="Post Title" />
+            <input type="text" name="title" placeholder="Post Title" class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-gray-300" />
 
             <div>
                 <label for="content" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Post
@@ -42,7 +30,6 @@
             </div>
 
             <x-ui.button type="submit" class="mt-4 self-end" id="submit-button">Submit</x-ui.button>
-
         </form>
     </div>
 
@@ -110,8 +97,6 @@
 
             const form = document.getElementById('create-post-form');
             const hiddenInput = document.querySelector('#content');
-            const submitBtn = document.getElementById('submit-button')
-            const category = document.getElementById('categories').value;
             const title = document.querySelector('input[name="title"]').value.trim();
 
             const oldBody = @json(old('body'));

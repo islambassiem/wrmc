@@ -30,7 +30,6 @@ class UpdatePostRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'body' => ['required', 'string'],
             'staus' => ['nullable', Rule::in(PostStatus::cases())],
-            'category_id' => ['required', 'exists:categories,id'],
         ];
     }
 }

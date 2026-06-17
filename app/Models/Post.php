@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
     'slug',
     'body',
     'status',
-    'category_id',
     'created_by',
     'updated_by',
 ])]
@@ -24,7 +23,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $slug
  * @property string $body
  * @property string $status
- * @property int $category_id
  * @property int $created_by
  * @property int $updated_by
  */
@@ -32,14 +30,6 @@ class Post extends Model
 {
     /** @use HasFactory<PostFactory> */
     use HasFactory;
-
-    /**
-     * @return BelongsTo<Category, $this>
-     */
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
 
     public function casts(): array
     {

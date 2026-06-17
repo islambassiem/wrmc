@@ -14,7 +14,6 @@ class PublicPostController extends Controller
         return view('pages.public.posts.index', [
             'post' => $post->load('category'),
             'related' => Post::query()
-                ->where('category_id', $post->category_id)
                 ->where('id', '!=', $post->id)
                 ->where('status', PostStatus::PUBLISHED->value)
                 ->selectRaw('id, title, slug, substr(body, 1, 150) as body')

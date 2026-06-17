@@ -16,20 +16,7 @@
                     @csrf
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-4  space-y-4">
                         <div class="sm:flex sm:justify-between sm:items-center sm:gap-6 sm:flex-1">
-                            <div class="w-full">
-                                <label for="categories" class="mb-2.5 text-sm font-medium text-heading">Select
-                                    category</label>
-                                <select id="categories" name="category_id"
-                                    class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
-                                    <option value="" selected>Select All</option>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}"
-                                            @selected($category->id === request()->integer('category_id'))>{{ $category->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="w-full">
+                            <div class="w-sm">
                                 <label for="statuses" class="mb-2.5 text-sm font-medium text-heading">Select Status
                                     {{ request()->string('status') }}</label>
                                 <select id="statuses" name="status"
@@ -67,9 +54,6 @@
                         <p class="font-medium text-gray-500 text-theme-xs dark:text-gray-200">Title</p>
                     </th>
                     <th class="px-5 py-3 text-left sm:px-6">
-                        <p class="font-medium text-gray-500 text-theme-xs dark:text-gray-200">Category</p>
-                    </th>
-                    <th class="px-5 py-3 text-left sm:px-6">
                         <p class="font-medium text-gray-500 text-theme-xs dark:text-gray-200">Status</p>
                     </th>
                     <th class="px-5 py-3 text-left sm:px-6">
@@ -88,9 +72,6 @@
                                 </td>
                                 <td class="px-5 py-4 sm:px-6 wrap-break-word">
                                     <p class="text-gray-500 text-theme-sm dark:text-gray-200">{{ $post->title }}</p>
-                                </td>
-                                <td class="px-5 py-4 sm:px-6">
-                                    <p class="text-gray-500 text-theme-sm dark:text-gray-200">{{ $post->category->name }}</p>
                                 </td>
                                 <td class="px-5 py-4 sm:px-6">
                                     <p class="text-gray-500 text-theme-sm dark:text-gray-200">{{ $post->status->value }}</p>

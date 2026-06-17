@@ -13,7 +13,6 @@ class PostData
 
         public string $title,
         public string $body,
-        public int $category_id,
         public ?string $status = null,
     ) {
         //

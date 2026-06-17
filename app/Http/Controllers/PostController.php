@@ -8,11 +8,9 @@ use App\Data\PostData;
 use App\Enums\CategoryType;
 use App\Enums\Permission;
 use App\Enums\PostStatus;
-use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,21 +27,16 @@ class PostController extends Controller
     public function index(Request $request): View
     {
         $posts = Post::query()
-            ->when($request->input('category_id'), function ($query) use ($request): void {
-                $query->where('category_id', $request->input('category_id'));
-            })
             ->when($request->input('status'), function ($query) use ($request): void {
                 $query->where('status', $request->input('status'));
             })
-            ->with('category')
-            ->select(['id', 'title', 'status', 'category_id', 'slug', 'created_at', 'updated_at'])
+            ->select(['id', 'title', 'status', 'slug', 'created_at', 'updated_at'])
             ->latest('updated_at')
             ->paginate(10)
             ->withQueryString();
 
         return view('pages.posts.index', [
             'statuses' => $this->statuses(),
-            'categories' => $this->categories(),
             'posts' => $posts,
         ]);
     }
@@ -67,7 +60,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         Gate::authorize(Permission::POST_CREATE);
 
@@ -80,7 +73,6 @@ class PostController extends Controller
             new PostData(
                 title: $request->string('title')->value(),
                 body: $body,
-                category_id: $request->integer('category_id'),
                 status: $request->string('status'),
             )
         );
@@ -103,7 +95,6 @@ class PostController extends Controller
     {
         return view('pages.posts.edit', [
             'sessionToken' => $this->sessionToken(),
-            'categories' => $this->categories(),
             'statuses' => $this->statuses(),
             'post' => $post,
         ]);
@@ -125,7 +116,6 @@ class PostController extends Controller
             new PostData(
                 title: $request->string('title')->value(),
                 body: $body,
-                category_id: $request->integer('category_id'),
                 status: $request->string('status'),
             ), $post
         );
@@ -137,20 +127,14 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post): void
+    public function destroy(Post $post): RedirectResponse
     {
-        //
-    }
+        Gate::authorize(Permission::POST_DELETE);
 
-    /**
-     * @return Collection<int, Category>
-     */
-    private function categories(): Collection
-    {
-        return Category::query()
-            ->where('type', CategoryType::POST)
-            ->select(['id', 'name'])
-            ->get();
+        $post->delete();
+
+        return to_route('posts.index')
+            ->with('success', 'Post deleted successfully');
     }
 
     /**

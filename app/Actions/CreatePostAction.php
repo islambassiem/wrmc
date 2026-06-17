@@ -16,7 +16,6 @@ class CreatePostAction
             'slug' => Str::slug($data->title),
             'body' => $data->body,
             'status' => PostStatus::DRAFT,
-            'category_id' => $data->category_id,
         ]);
     }
 }

@@ -10,11 +10,11 @@
         </a>
     </div>
 
-    <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/3 lg:p-6">
+    <div class="rounded-2xl p-5 border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/3 lg:p-6">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @foreach ($doctors as $doctor)
                 <a href="{{ route('doctors.edit', $doctor) }}"
-                    class="relative flex flex-col h-full bg-white rounded-3xl shadow-lg p-5 w-full max-w-xs mx-auto overflow-hidden">
+                    class="relative flex flex-col h-full  bg-gray-50 dark:bg-slate-800 rounded-3xl shadow-lg p-5 w-full max-w-xs mx-auto overflow-hidden">
 
                     <!-- Badge -->
                     @if ($doctor->resignation_date)
@@ -24,16 +24,16 @@
                         </span>
                     @endif
 
-                    <div class="aspect-square overflow-hidden rounded-2xl">
+                    <div class="aspect-square overflow-hidden rounded-2xl ">
                         <img src="{{ Storage::url($doctor->image ?? 'doctors/default.gif') }}" alt="{{ $doctor->name }}"
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 rounded-full">
                     </div>
 
-                    <p class="mt-4 text-lg font-semibold text-center">
+                    <p class="mt-4 text-lg font-semibold text-center text-gray-800 dark:text-gray-100">
                         {{ $doctor->name }}
                     </p>
 
-                    <p class="text-gray-600 text-center">
+                    <p class="text-center text-gray-600 dark:text-gray-500">
                         {{ $doctor->title }}
                     </p>
                 </a>
