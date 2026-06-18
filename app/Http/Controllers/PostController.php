@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Actions\CreatePostAction;
+use App\Actions\DeletePostAction;
 use App\Actions\UpdatePostAction;
 use App\Data\PostData;
 use App\Enums\CategoryType;
 use App\Enums\Permission;
 use App\Enums\PostStatus;
+use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Services\PostService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -60,11 +63,11 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StorePostRequest $request): RedirectResponse
     {
         Gate::authorize(Permission::POST_CREATE);
 
-        $body = $this->deleteUnusedFiles(
+        $body = PostService::deleteUnusedFiles(
             $request->string('body')->value(),
             $request->string('session_token')->value()
         );
@@ -73,19 +76,10 @@ class PostController extends Controller
             new PostData(
                 title: $request->string('title')->value(),
                 body: $body,
-                status: $request->string('status'),
             )
         );
 
         return to_route('posts.index')->with('success', 'Post created successfully');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Post $post): void
-    {
-        //
     }
 
     /**
@@ -107,7 +101,7 @@ class PostController extends Controller
     {
         Gate::authorize(Permission::POST_UPDATE);
 
-        $body = $this->deleteUnusedFiles(
+        $body = PostService::deleteUnusedFiles(
             $request->string('body')->value(),
             $request->string('session_token')->value()
         );
@@ -131,7 +125,7 @@ class PostController extends Controller
     {
         Gate::authorize(Permission::POST_DELETE);
 
-        $post->delete();
+        resolve(DeletePostAction::class)->handle($post);
 
         return to_route('posts.index')
             ->with('success', 'Post deleted successfully');
@@ -151,57 +145,5 @@ class PostController extends Controller
         session()->put('upload_session_token', $sessionToken);
 
         return $sessionToken;
-    }
-
-    private function deleteUnusedFiles(string $body, string $sessionToken): string
-    {
-        preg_match_all('/<img[^>]+src="([^"]+)"/i', $body, $matches);
-        $usedUrls = $matches[1];
-
-        $tempUploads = DB::table('temp_uploads')->where('session_token', $sessionToken)->get();
-
-        $idsToDelete = [];
-
-        foreach ($tempUploads as $upload) {
-
-            if (empty($upload->path)) {
-                continue;
-            }
-
-            if (! \is_string($upload->path)) {
-                continue;
-            }
-
-            $url = Storage::url($upload->path);
-
-            $normalizedStorageUrl = parse_url($url, PHP_URL_PATH);
-            $normalizedUsedUrls = array_map(fn ($u): string|false|null => parse_url($u, PHP_URL_PATH), $usedUrls);
-
-            if (\in_array($normalizedStorageUrl, $normalizedUsedUrls)) {
-                $newPath = str_replace('temp/', 'posts/', $upload->path);
-
-                Storage::disk('public')->makeDirectory('posts');
-                Storage::disk('public')->move($upload->path, $newPath);
-
-                $newUrl = Storage::url($newPath);
-                $body = str_replace($url, $newUrl, $body);
-
-                $body = str_replace(
-                    url($url),
-                    url($newUrl),
-                    $body
-                );
-            } else {
-                Storage::disk('public')->delete($upload->path);
-            }
-
-            $idsToDelete[] = $upload->id;
-        }
-
-        DB::table('temp_uploads')->whereIn('id', $idsToDelete)->delete();
-
-        session()->forget('upload_session_token');
-
-        return $body;
     }
 }

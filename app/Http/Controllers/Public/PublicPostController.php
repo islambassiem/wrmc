@@ -12,7 +12,7 @@ class PublicPostController extends Controller
     public function __invoke(Post $post): View
     {
         return view('pages.public.posts.index', [
-            'post' => $post->load('category'),
+            'post' => $post,
             'related' => Post::query()
                 ->where('id', '!=', $post->id)
                 ->where('status', PostStatus::PUBLISHED->value)

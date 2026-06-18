@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->longText('body');
             $table->string('status');
+            $table->string('thumbnail')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->foreignId('Updated_by')->nullable()->constrained('users');
             $table->timestamps();

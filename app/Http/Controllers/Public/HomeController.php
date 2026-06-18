@@ -41,7 +41,7 @@ class HomeController extends Controller
     {
         $posts = Post::query()
             ->where('status', PostStatus::PUBLISHED->value)
-            ->select('id', 'title', 'slug', 'image')
+            ->select('id', 'title', 'slug', 'thumbnail')
             ->selectRaw('substr(body, 1, 150) as body')
             ->orderBy('updated_by', 'desc')
             ->limit(4)

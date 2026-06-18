@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'slug' => Str::slug($title),
             'body' => fake()->paragraphs(10, true),
             'status' => fake()->randomElement(PostStatus::cases()),
+            'thumbnail' => fake()->imageUrl(),
         ];
     }
 }

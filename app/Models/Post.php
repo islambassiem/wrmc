@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
     'slug',
     'body',
     'status',
+    'thumbnail',
     'created_by',
     'updated_by',
 ])]
@@ -23,8 +24,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $slug
  * @property string $body
  * @property string $status
+ * @property string $thumbnail
  * @property int $created_by
- * @property int $updated_by
+* @property int $updated_by
  */
 class Post extends Model
 {

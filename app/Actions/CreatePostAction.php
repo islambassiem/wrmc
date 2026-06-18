@@ -5,6 +5,7 @@ namespace App\Actions;
 use App\Data\PostData;
 use App\Enums\PostStatus;
 use App\Models\Post;
+use App\Services\PostService;
 use Illuminate\Support\Str;
 
 class CreatePostAction
@@ -16,6 +17,7 @@ class CreatePostAction
             'slug' => Str::slug($data->title),
             'body' => $data->body,
             'status' => PostStatus::DRAFT,
+            'thumbnail' => PostService::createThumbnail($data->body),
         ]);
     }
 }

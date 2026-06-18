@@ -40,3 +40,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function (): void {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('test', function (){
+    $post = App\Models\Post::findOrFail(1);
+
+    $images = App\Services\PostService::postImages($post->body);
+    dd($images);
+});

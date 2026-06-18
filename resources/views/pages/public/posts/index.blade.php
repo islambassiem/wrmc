@@ -4,10 +4,6 @@
             <div class="mx-4 lg:col-span-9">
                 <h1 class="text-4xl sm:text-3xl md:text-5xl font-bold font-serif">{{ $post->title }}</h1>
                 <div class="flex flex-col gap-2 md:flex-row md:mt-5">
-                    <h2 class="flex items-center gap-1">
-                        <i class="fa-solid fa-tag fa-xs text-black"></i>
-                        {{ $post->category->name }}
-                    </h2>
                     <h3 class="text-xs text-gray-600 flex items-center gap-1">
                         <i class="fa-solid fa-clock fa-md text-black"></i>
                         Updated at: {{ $post->updated_at->format('d M Y') }}
