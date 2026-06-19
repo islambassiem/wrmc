@@ -1,22 +1,11 @@
 <section class="relative min-h-screen flex items-center overflow-hidden bg-gray-900">
-    {{-- Animated Background Elements --}}
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        {{-- Gradient Orbs --}}
-        <div
-            class="absolute -top-40 -right-40 w-96 h-96 bg-linear-to-br from-primary-400 to-teal-400 rounded-full opacity-20 blur-3xl animate-float">
-        </div>
-        <div
-            class="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-teal-400 to-primary-400 rounded-full opacity-20 blur-3xl animate-float-delayed">
-        </div>
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-primary-300 to-purple-300 rounded-full opacity-10 blur-3xl animate-float-slow">
-        </div>
 
-        {{-- Medical Grid Pattern --}}
-        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-    </div>
+    <img src="{{ asset('assets/images/hero.jpeg') }}" alt="hero"
+        class="absolute inset-0 w-full h-full object-cover lg:hidden">
 
-    <div class="flex gap-4 container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-36 md:pt-28 lg:pt-40">
+    <div class="absolute inset-0 bg-gray-900/70 lg:hidden"></div>
+
+    <div class="flex lg:items-center gap-4 container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-36 md:pt-28 lg:pt-40">
         {{-- Hero Content --}}
         <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up ">
             {{-- Badge --}}
@@ -82,8 +71,8 @@
                 </div>
             </div>
         </div>
-        <div class="relative">
-            <img src="{{ asset('assets/images/hero.jpeg') }}" alt="hero" class="block">
+        <div class="relative hidden lg:block min-w-md min-h-md">
+            <img src="{{ asset('assets/images/hero.jpeg') }}" alt="hero" class="block object-contain w-full h-full">
             <div class="absolute inset-0 bg-linear-to-r from-gray-900 via-transparent to-transparent"></div>
         </div>
     </div>
