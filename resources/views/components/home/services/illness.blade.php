@@ -1,7 +1,7 @@
 @props(['title', 'subitems', 'index'])
 
 <div class="border-b border-gray-200">
-    <button type="button" class="w-full py-5 flex items-center justify-between text-left"
+    <button type="button" class="w-full py-5 flex items-center justify-between text-left transition duration-300 hover:cursor-pointer hover:-translate-y-1"
         @click="active = active === {{ $index }} ? null : {{ $index }}">
         <span class="uppercase text-gray-600 font-semibold">
             {{ $title }}

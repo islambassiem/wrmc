@@ -23,7 +23,7 @@
 
         <a href="{{ route('home') . '#blog' }}" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">
             <i class="fa-solid fa-blog text-primary-800 "></i>
-            Blog
+            News
         </a>
 
         <a href="{{ route('home') . '#contacts' }}" class="px-6 py-4 text-lg font-medium hover:bg-primary-50 active:bg-primary-100 transition" @click="open = false">

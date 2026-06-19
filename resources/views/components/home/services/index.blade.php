@@ -1,7 +1,7 @@
 @php
     $items = [
         [
-            'title' => 'Family Medicine - all doctors',
+            'title' => 'Family Medicine',
             'subitems' => [
                 [
                     'title' => 'Routine medical care',
@@ -160,7 +160,7 @@
         for patients of all ages. Click any condition to learn more.
     </p>
 
-    <div class="flex flex-col mb-10 mx-5" x-data="{ active: 0 }">
+    <div class="flex flex-col mb-10 mx-5" x-data="{ active: null }">
         @foreach ($items as $index => $item)
             <x-home.services.illness :index="$index" :title="$item['title']" :subitems="$item['subitems']" />
         @endforeach

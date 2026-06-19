@@ -1,5 +1,4 @@
-<section
-    class="relative min-h-screen flex items-center overflow-hidden bg-primary-100">
+<section class="relative min-h-screen flex items-center overflow-hidden bg-gray-900">
     {{-- Animated Background Elements --}}
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         {{-- Gradient Orbs --}}
@@ -17,31 +16,31 @@
         <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-36 md:pt-28 lg:pt-40">
+    <div class="flex gap-4 container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-36 md:pt-28 lg:pt-40">
         {{-- Hero Content --}}
         <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up ">
             {{-- Badge --}}
             <h1
-                class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary-200 px-4 py-2 rounded-full mb-8 shadow-sm">
+                class="inline-flex items-center gap-2 bg-gray-900 text-gray-100 backdrop-blur-sm border border-primary-200 px-4 py-2 rounded-full mb-8 shadow-sm">
                 <span class="relative flex h-2 w-2">
                     <span
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                 </span>
-                <span class="text-sm font-medium text-primary-900">
+                <span class="text-sm font-medium">
                     Trusted by Logan families for over 45 years
                 </span>
             </h1>
 
             {{-- Main Heading --}}
-            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-900">
+            <h1 class="font-sans text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-100">
                 Logan Central's
                 <span class="italic text-yellow-500">Family Medical</span>
                 Centre
             </h1>
 
             {{-- Description --}}
-            <p class="text-xl text-gray-600 leading-relaxed mb-10">
+            <p class="text-xl text-gray-100 leading-relaxed mb-10">
                 Experienced GPs delivering comprehensive healthcare for your whole family — open 7 days
                 including weekends. Trusted by Logan families for over 45 years
             </p>
@@ -56,7 +55,7 @@
             </div>
 
             {{-- Trust Badges --}}
-            <div class="flex flex-wrap gap-6 text-sm text-gray-600">
+            <div class="flex flex-wrap gap-6 text-sm text-gray-100">
                 <div class="flex items-center gap-2">
                     <svg class="w-5 h-5 text-teal-600" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
@@ -82,6 +81,10 @@
                     <span class="font-medium">Telehealth available</span>
                 </div>
             </div>
+        </div>
+        <div class="relative">
+            <img src="{{ asset('assets/images/hero.jpeg') }}" alt="hero" class="block">
+            <div class="absolute inset-0 bg-linear-to-r from-gray-900 via-transparent to-transparent"></div>
         </div>
     </div>
 </section>
