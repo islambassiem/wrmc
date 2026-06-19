@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Actions;
 
 use App\Data\PostData;
-use App\Enums\PostStatus;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Support\Str;

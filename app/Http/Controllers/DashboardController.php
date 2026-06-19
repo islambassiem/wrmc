@@ -15,9 +15,9 @@ class DashboardController extends Controller
     public function index(): Factory|View
     {
         return view('dashboard', [
-            'doctors' => Doctor::count(),
-            'publishedPosts' => Post::where('status', PostStatus::PUBLISHED->value)->count(),
-            'draftPosts' => Post::where('status', PostStatus::DRAFT->value)->count(),
+            'doctors' => Doctor::query()->count(),
+            'publishedPosts' => Post::query()->where('status', PostStatus::PUBLISHED->value)->count(),
+            'draftPosts' => Post::query()->where('status', PostStatus::DRAFT->value)->count(),
         ]);
     }
 }

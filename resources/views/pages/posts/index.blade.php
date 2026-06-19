@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'title' => 'Posts'
+])
 
 @section('content')
     <x-common.page-breadcrumb pageTitle="Posts" />

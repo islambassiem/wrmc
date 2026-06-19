@@ -6,7 +6,6 @@ use App\Data\PostData;
 use App\Enums\Permission;
 use App\Enums\PostStatus;
 use App\Enums\Role;
-use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use TypeError;
@@ -18,7 +17,6 @@ test('action can create a post', function (): void {
         new PostData(
             $payload['title'],
             $payload['body'],
-            (int) $payload['category_id'],
             $payload['status']->value,
         )
     );
@@ -26,7 +24,6 @@ test('action can create a post', function (): void {
     expect($post->title)->toBe($payload['title']);
     expect($post->body)->toBe($payload['body']);
     expect($post->status->value)->toBe(PostStatus::DRAFT->value);
-    expect($post->category_id)->toBe($payload['category_id']);
 });
 
 test('create action fails with invalid data', function (): void {
@@ -36,7 +33,6 @@ test('create action fails with invalid data', function (): void {
     expect(fn (): PostData => new PostData(
         $payload['title'],
         $payload['body'],
-        (int) $payload['category_id'],
         $payload['status']->value,
     ))->toThrow(TypeError::class);
 });
@@ -48,7 +44,6 @@ test('action can upate a post', function (): void {
         new PostData(
             $payload['title'],
             $payload['body'],
-            (int) $payload['category_id'],
             $payload['status']->value,
         ),
         $post
@@ -57,7 +52,6 @@ test('action can upate a post', function (): void {
     expect($post->title)->toBe($payload['title']);
     expect($post->body)->toBe($payload['body']);
     expect($post->status)->toBe($payload['status']);
-    expect($post->category_id)->toBe($payload['category_id']);
 });
 
 test('user can view create post page', function (): void {
@@ -98,7 +92,6 @@ test('user can create a post', function (): void {
     $payload = [
         'title' => 'My Post',
         'body' => 'Post body',
-        'category_id' => Category::factory()->create()->id,
         'status' => 'draft',
     ];
 
@@ -123,7 +116,6 @@ test('user can update a post', function (): void {
     $payload = [
         'title' => 'My updated Post',
         'body' => 'Post updated body',
-        'category_id' => Category::factory()->create()->id,
         'status' => 'published',
     ];
 

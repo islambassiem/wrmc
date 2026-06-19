@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'Dashboard' }} | TailAdmin - Laravel Tailwind CSS Admin Dashboard Template</title>
+    <title>{{ $title ?? 'Dashboard' }}</title>
 
-    <!-- Scripts -->
+    <!-- Scripts -->x
     @vite(['resources/css/admin.css', 'resources/js/app.js'])
 
     <!-- Alpine.js -->

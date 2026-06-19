@@ -1,4 +1,6 @@
-@extends('layouts.fullscreen-layout')
+@extends('layouts.fullscreen-layout', [
+    'title' => 'Reset Password'
+])
 
 @section('content')
     <div class="relative z-1 bg-white p-6 sm:p-0 dark:bg-gray-900">
@@ -101,20 +103,6 @@
                 </div>
             </div>
 
-            <div class="bg-brand-950 relative hidden h-full w-full items-center lg:grid lg:w-1/2 dark:bg-white/5">
-                <div class="z-1 flex items-center justify-center">
-                    <!-- ===== Common Grid Shape Start ===== -->
-                    <x-common.common-grid-shape/>
-                    <div class="flex max-w-xs flex-col items-center">
-                        <a href="{{ route('dashboard') }}" class="mb-4 block">
-                            <img src="{{ asset('images/logo/auth-logo.svg') }}" alt="Logo" />
-                        </a>
-                        <p class="text-center text-gray-400 dark:text-white/60">
-                            Free and Open-Source Tailwind CSS Admin Dashboard Template
-                        </p>
-                    </div>
-                </div>
-            </div>
             <!-- Toggler -->
             <div class="fixed right-6 bottom-6 z-50">
                 <button

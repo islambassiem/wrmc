@@ -19,7 +19,7 @@ class DeletePostAction
     {
         $images = PostService::postImages($body);
 
-        if (empty($images)) {
+        if ($images === null || $images === []) {
             return;
         }
 

@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'title' => 'Dashboard'
+])
 
 @section('content')
   <div class="grid grid-cols-12 gap-4 md:gap-6">

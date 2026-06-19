@@ -11,8 +11,6 @@ use App\Http\Controllers\Public\DoctorContoller as PublicDoctorController;
 use App\Http\Controllers\Public\HomeController;
 use App\Http\Controllers\Public\PublicPostController;
 use App\Http\Controllers\UserController;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -20,8 +18,6 @@ Route::get('/doctor/{doctor}', PublicDoctorController::class)->name('doctor.show
 Route::get('post/{post}', PublicPostController::class)->name('post.show');
 
 Route::middleware(['auth'])->prefix('admin')->group(function (): void {
-    // Route::get('/dashboard', fn (): Factory|View => view('dashboard', ['title' => 'Dashboard']))->name('dashboard');
-
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('categories', CategoryController::class)
@@ -40,10 +36,3 @@ Route::middleware(['auth'])->prefix('admin')->group(function (): void {
 });
 
 require __DIR__.'/auth.php';
-
-Route::get('test', function (){
-    $post = App\Models\Post::findOrFail(1);
-
-    $images = App\Services\PostService::postImages($post->body);
-    dd($images);
-});
