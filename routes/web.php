@@ -10,6 +10,7 @@ use App\Http\Controllers\PostImageUploadController;
 use App\Http\Controllers\Public\DoctorContoller as PublicDoctorController;
 use App\Http\Controllers\Public\HomeController;
 use App\Http\Controllers\Public\PublicPostController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function (): void {
         ->only('index', 'store', 'update');
 
     Route::resource('posts', PostController::class)
+        ->only('index', 'edit', 'update', 'create', 'store', 'destroy');
+
+    Route::resource('services', ServiceController::class)
         ->only('index', 'edit', 'update', 'create', 'store', 'destroy');
 
     Route::resource('doctors', DoctorController::class)

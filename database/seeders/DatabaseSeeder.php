@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             UserSeeder::class,
             CategorySeeder::class,
-            // PostSeeder::class,
+            ServiceSeeder::class,
             DoctorSeeder::class,
         ]);
 

@@ -20,4 +20,9 @@ enum Permission: string
     case DOCTOR_UPDATE = 'update_doctor';
     case DOCTOR_DELETE = 'delete_doctor';
 
+    case SERVICE_VIEW_ALL = 'service_view_all';
+    case SERVICE_CREATE = 'create_service';
+    case SERVICE_UPDATE = 'update_service';
+    case SERVICE_DELETE = 'delete_service';
+
 }

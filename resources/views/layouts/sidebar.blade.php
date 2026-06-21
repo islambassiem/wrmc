@@ -123,6 +123,20 @@
                             </span>
                         </a>
                     </li>
+
+                    <li>
+                        <a href="{{ route('services.index') }}"
+                            class="group flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('services.*') ? $activeClasses : $inactiveClasses }}">
+
+                            <i class="fa-solid fa-gears"></i>
+
+                            <span
+                                x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
+                                class="font-medium">
+                                Services
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
