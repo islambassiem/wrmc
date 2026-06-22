@@ -10,11 +10,17 @@ class CreateServiceAction
 {
     public function handle(ServiceData $data): Service
     {
+        $imagePath = null;
+
+        if ($data->image) {
+            $imagePath = $data->image->store('services', 'public');
+        }
+
         return Service::create([
             'name' => $data->name,
             'slug' => Str::slug($data->name),
             'parent_id' => $data->parent_id,
-            'image' => $data->image,
+            'image' => $imagePath,
         ]);
     }
 }

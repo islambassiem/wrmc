@@ -24,8 +24,7 @@ class UpdateServiceRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255', 'unique:services,name'],
-            'slug' => ['required', 'string', 'max:255', 'unique:services,slug'],
-            'image' => ['nullable', 'string', 'max:255'],
+            'image' => ['nullable', 'file', 'mimetypes:image/png,image/jpeg,image/webp,image/svg+xml', 'max:2048'],
             'parent_id' => ['nullable', 'exists:services,id'],
         ];
     }

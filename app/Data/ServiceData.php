@@ -2,6 +2,8 @@
 
 namespace App\Data;
 
+use Illuminate\Http\UploadedFile;
+
 class ServiceData
 {
     /**
@@ -9,9 +11,9 @@ class ServiceData
      */
     public function __construct(
         public string $name,
-        public ?string $slug,
-        public ?string $image,
+        public ?UploadedFile $image,
         public ?int $parent_id,
+        public ?string $slug = null,
     )
     {
         //

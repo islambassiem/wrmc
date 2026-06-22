@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\CreateServiceAction;
+use App\Data\ServiceData;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Post;
 use App\Models\Service;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class ServiceController extends Controller
@@ -31,9 +34,17 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreServiceRequest $request): void
+    public function store(StoreServiceRequest $request): RedirectResponse
     {
-        dd($request->all());
+        resolve(CreateServiceAction::class)->handle(
+            new ServiceData(
+                name: $request->string('name')->value(),
+                parent_id: $request->integer('parent_id'),
+                image: $request->file('image'),
+            )
+        );
+
+        return back()->with('success', 'Service created successfully');
     }
 
     /**

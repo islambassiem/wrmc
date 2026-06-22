@@ -7,15 +7,28 @@
                 this.handleFiles(droppedFiles);
             },
             handleFiles(selectedFiles) {
-                const validTypes = ['image/png', 'image/jpeg', 'image/webp', 'image/svg+xml'];
-                const validFiles = selectedFiles.filter(file => validTypes.includes(file.type));
+                const validTypes = [
+                    'image/png',
+                    'image/jpeg',
+                    'image/webp',
+                    'image/svg+xml'
+                ];
+
+                const validFiles = selectedFiles.filter(file =>
+                    validTypes.includes(file.type)
+                );
 
                 if (validFiles.length > 0) {
-                    this.files = [...this.files, ...validFiles];
-                    console.log('Files uploaded:', validFiles);
+                    this.files = validFiles;
 
-                    // Here you can add logic to upload files to server
-                    this.uploadFiles(validFiles);
+                    // Sync dropped files to the actual input
+                    const dataTransfer = new DataTransfer();
+
+                    validFiles.forEach(file => {
+                        dataTransfer.items.add(file);
+                    });
+
+                    this.$refs.fileInput.files = dataTransfer.files;
                 }
             },
             uploadFiles(files) {
@@ -35,9 +48,9 @@
         class="dropzone rounded-xl border-dashed border-gray-300 p-7 lg:p-10 transition-colors cursor-pointer"
         id="demo-upload">
         <!-- Hidden File Input -->
-        <input x-ref="fileInput" type="file" name="image"
-            @change="handleFiles(Array.from($event.target.files)); $event.target.value = ''"
-            accept="image/png,image/jpeg,image/webp,image/svg+xml" class="hidden" @click.stop />
+        <input x-ref="fileInput" type="file" name="image" @change="handleFiles(Array.from($event.target.files));"
+            accept="image/png,image/jpeg,image/webp,image/svg+xml" class="hidden"
+            @change="files = Array.from($event.target.files)" />
 
         <div class="flex flex-col items-center m-0">
             <!-- Icon Container -->
