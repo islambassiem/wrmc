@@ -6,6 +6,7 @@ use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use App\Models\Post;
+use App\Models\Service;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
@@ -17,6 +18,7 @@ class HomeController extends Controller
         return view('home', [
             'doctors' => $this->doctors(),
             'posts' => $this->posts(),
+            'services' => $this->services(),
         ]);
     }
 
@@ -50,5 +52,18 @@ class HomeController extends Controller
         return $posts->each(function ($post): void {
             $post->body = strip_tags((string) $post->body);
         });
+    }
+
+    /**
+     * @return array<mixed>
+     */
+    private function services(): array
+    {
+        return Service::query()
+            ->with('children:name,image,parent_id')
+            ->select('id', 'name')
+            ->whereNull('parent_id')
+            ->get()
+            ->toArray();
     }
 }

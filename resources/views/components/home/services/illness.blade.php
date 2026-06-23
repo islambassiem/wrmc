@@ -18,7 +18,7 @@
         class="overflow-hidden">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-5">
             @foreach ($subitems as $item)
-                <x-home.services.illness-card :title="$item['title']" :svg="$item['svg']" />
+                <x-home.services.illness-card :title="$item['name']" :image="$item['image']" />
             @endforeach
         </div>
     </div>

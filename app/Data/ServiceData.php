@@ -16,8 +16,7 @@ class ServiceData
         public ?UploadedFile $image,
         public ?int $parent_id,
         public ?string $slug = null,
-    )
-    {
+    ) {
         //
     }
 }

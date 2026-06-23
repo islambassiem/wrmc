@@ -4,7 +4,7 @@
     <x-home.medicare />
     <x-home.features />
     <x-home.why-us />
-    <x-home.services />
+    <x-home.services :services="$services" />
     <x-home.ndis />
     <x-home.doctors :doctors="$doctors" />
     <x-home.telehealth />

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Throwable;
 use App\Actions\CreateServiceAction;
 use App\Actions\DeleteServiceAction;
 use App\Actions\UpdateServiceAction;
@@ -15,6 +14,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use Throwable;
 
 class ServiceController extends Controller
 {
