@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use Illuminate\Http\UploadedFile;
 use App\Data\ServiceData;
 use App\Models\Service;
 use Illuminate\Support\Str;
@@ -12,14 +13,14 @@ class CreateServiceAction
     {
         $imagePath = null;
 
-        if ($data->image) {
+        if ($data->image instanceof UploadedFile) {
             $imagePath = $data->image->store('services', 'public');
         }
 
-        return Service::create([
+        return Service::query()->create([
             'name' => $data->name,
             'slug' => Str::slug($data->name),
-            'parent_id' => $data->parent_id,
+            'parent_id' => $data->parent_id ?? null,
             'image' => $imagePath,
         ]);
     }

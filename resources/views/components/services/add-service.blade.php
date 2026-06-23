@@ -1,5 +1,5 @@
 <div>
-    <button @click="$dispatch('open-profile-address-modal')"
+    <button @click="$dispatch('open-add-service-modal')"
         class="flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 lg:inline-flex lg:w-auto">
         <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -10,8 +10,7 @@
         Add
     </button>
 
-    <x-ui.modal x-data="{ open: false }" @open-profile-address-modal.window="open = true" :isOpen="false"
-        class="max-w-175">
+    <x-ui.modal x-data="{ open: false }" @open-add-service-modal.window="open = true" :isOpen="false" class="max-w-175">
         <div
             class="no-scrollbar relative w-full max-w-175 overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
             <div class="px-2 pr-14">
@@ -22,7 +21,8 @@
                     Add a new service to be renderd on the main website page.
                 </p>
             </div>
-            <form class="flex flex-col space-y-8" action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
+            <form class="flex flex-col space-y-8" action="{{ route('services.store') }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div>
                     <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">

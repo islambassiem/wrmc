@@ -29,6 +29,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function (): void {
 
     Route::resource('services', ServiceController::class)
         ->only('index', 'edit', 'update', 'create', 'store', 'destroy');
+    Route::delete('services/{service}/image', [ServiceController::class, 'deleteImage'])->name('services.deleteImage');
 
     Route::resource('doctors', DoctorController::class)
         ->scoped(['doctor' => 'slug'])
