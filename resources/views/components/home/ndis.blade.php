@@ -17,12 +17,6 @@
                 referrals, and coordinate your care to ensure you receive the right
                 support at the right time.
             </p>
-
-            <a href="#"
-                class="mt-8 inline-flex items-center gap-3 text-primary-700 font-semibold hover:gap-4 transition-all">
-                Find out more
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
         </div>
 
         <!-- Image -->
