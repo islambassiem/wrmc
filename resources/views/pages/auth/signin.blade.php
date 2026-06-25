@@ -26,8 +26,8 @@
                                         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
                                             Email<span class="text-error-500">*</span>
                                         </label>
-                                        {{-- <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="info@gmail.com" autofocus autocomplete = "email" --}}
-                                        <input type="email" id="email" name="email" value="admin@admin.com" placeholder="info@gmail.com" autofocus autocomplete = "email"
+                                        <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="info@gmail.com" autofocus autocomplete = "email"
+                                        {{-- <input type="email" id="email" name="email" value="admin@admin.com" placeholder="info@gmail.com" autofocus autocomplete = "email" --}}
                                             class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 @error('email') border-error-500 @enderror" />
                                         @error('email')
                                             <p class="mt-1.5 text-sm text-error-500">{{ $message }}</p>
@@ -42,7 +42,7 @@
                                             <input :type="showPassword ? 'text' : 'password'" name="password"
                                                 autocomplete = "current-password"
                                                 placeholder="Enter your password"
-                                                value="Pa$$w0rd!"
+                                                {{-- value="Pa$$w0rd!" --}}
                                                 class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 @error('password') border-error-500 @enderror" />
                                             <span @click="showPassword = !showPassword"
                                                 class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer text-gray-500 dark:text-gray-400">
