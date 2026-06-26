@@ -1,5 +1,5 @@
 <header
-    class="sticky top-0 bg-white flex w-full border-gray-200 z-50 dark:border-gray-800 dark:bg-gray-900 xl:border-b"
+    class="sticky top-0 bg-white h-32 flex w-full border-gray-200 z-50 dark:border-gray-800 dark:bg-gray-900 xl:border-b"
     x-data="{
         isApplicationMenuOpen: false,
         toggleApplicationMenu() {
@@ -50,7 +50,7 @@
 
             <!-- Logo (mobile only) -->
             <a href="/" class="xl:hidden">
-                <img class="dark:hidden" src="/assets/logo.gif" alt="Logo" class="w-32 max-h-32" />
+                <img class="dark:hidden" src="/assets/logo.gif" alt="Logo" style="max-height: 60px;"/>
             </a>
 
             <!-- Application Menu Toggle (mobile only) -->

@@ -8,7 +8,7 @@
 
     <title>{{ $title ?? 'Dashboard' }}</title>
 
-    <!-- Scripts -->x
+    <!-- Scripts -->
     @vite(['resources/css/admin.css', 'resources/js/app.js'])
 
     <!-- Alpine.js -->
