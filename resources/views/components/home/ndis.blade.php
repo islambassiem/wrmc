@@ -21,7 +21,7 @@
 
         <!-- Image -->
         <div class="flex-1">
-            <img src="{{ asset('assets/images/Dr-Htay-NDIS-f.webp') }}" alt="Allied Health & Support Services"
+            <img src="{{ asset('assets/images/allied-health-support-services.webp') }}" alt="Allied Health & Support Services"
                 class="h-full w-full object-cover">
         </div>
 
