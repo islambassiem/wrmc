@@ -5,7 +5,7 @@
 
 <body class="antialiased">
     <main class="font-sans" role="main" x-data="{open: false}">
-        <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50" role="navigation">
+        <nav class="animate-slide-down bg-primary-50 fixed top-0 left-0 right-0 w-full z-50 shadow-xl" role="navigation">
             <div class="flex flex-col md:flex-row md:justify-between w-full ">
                 <div class="flex items-center justify-between gap-3 flex-1 ">
                     <a href="{{ route('home') }}">
