@@ -32,6 +32,7 @@ class CreateDoctorAction
                 'board_certifications' => $data->board_certifications,
                 'field_of_expertise' => $data->field_of_expertise,
                 'years_of_experience' => $data->years_of_experience,
+                'order' => $data->order,
                 'quote' => $data->quote,
             ]);
         } catch (Throwable $throwable) {

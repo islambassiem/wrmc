@@ -2,7 +2,7 @@
     <x-home.hero />
     <x-home.stats />
     <x-home.medicare />
-    <x-home.features />
+    {{-- <x-home.features /> --}}
     <x-home.why-us />
     <x-home.services :services="$services" />
     <x-home.ndis />

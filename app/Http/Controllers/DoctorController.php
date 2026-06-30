@@ -20,7 +20,10 @@ class DoctorController extends Controller
     public function index(): View
     {
         $doctors = Doctor::query()
-            ->select('id', 'name', 'slug', 'title', 'image', 'resignation_date')
+            ->select('id', 'name', 'slug', 'title', 'image', 'resignation_date', 'order')
+            ->orderByRaw('"order" IS NULL')
+            ->orderBy('order')
+            ->latest('updated_at')
             ->get();
 
         return view('pages.doctors.index', [
@@ -56,6 +59,7 @@ class DoctorController extends Controller
                 board_certifications: $request->string('board_certifications')->value(),
                 field_of_expertise: $request->string('field_of_expertise')->value(),
                 years_of_experience: $request->integer('years_of_experience'),
+                order: $request->integer('order'),
                 quote: $request->string('quote')->value(),
             )
         );
@@ -102,6 +106,7 @@ class DoctorController extends Controller
                 board_certifications: $request->string('board_certifications')->value(),
                 field_of_expertise: $request->string('field_of_expertise')->value(),
                 years_of_experience: $request->integer('years_of_experience'),
+                order: $request->integer('order'),
                 quote: $request->string('quote')->value(),
             ), $doctor
         );

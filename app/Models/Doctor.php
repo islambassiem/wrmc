@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
     'board_certifications',
     'field_of_expertise',
     'years_of_experience',
+    'order',
     'quote',
     'created_by',
     'updated_by',

@@ -9,7 +9,7 @@
         {{-- Hero Content --}}
         <div class="max-w-3xl mx-auto lg:mx-0 lg:max-w-2xl animate-fade-in-up ">
             {{-- Badge --}}
-            <h1
+            <div
                 class="inline-flex items-center gap-2 bg-gray-900 text-gray-100 backdrop-blur-sm border border-primary-200 px-4 py-2 rounded-full mb-8 shadow-sm">
                 <span class="relative flex h-2 w-2">
                     <span
@@ -19,20 +19,20 @@
                 <span class="text-sm font-medium">
                     Trusted by Logan families for over 45 years
                 </span>
-            </h1>
+            </div>
 
             {{-- Main Heading --}}
-            <h1 class="font-sans text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-100">
+            {{-- <h1 class="font-sans text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight mb-6 text-gray-100">
                 Logan Central's
                 <span class="italic text-yellow-500">Family Medical</span>
                 Centre
-            </h1>
+            </h1> --}}
 
             {{-- Description --}}
-            <p class="text-xl text-gray-100 leading-relaxed mb-10">
+            {{-- <p class="text-xl text-gray-100 leading-relaxed mb-10">
                 Experienced GPs delivering comprehensive healthcare for your whole family — open 7 days
                 including weekends. Trusted by Logan families for over 45 years
-            </p>
+            </p> --}}
 
             {{-- CTA Buttons --}}
             <div class="flex flex-col sm:flex-row gap-4 mb-12">

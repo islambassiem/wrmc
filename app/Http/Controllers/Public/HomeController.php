@@ -33,6 +33,9 @@ class HomeController extends Controller
                     ->orWhere('resignation_date', '>=', CarbonImmutable::now()->startOfDay()->format('Y-m-d'));
             })
             ->select('id', 'name', 'slug', 'title', 'image')
+            ->orderByRaw('"order" IS NULL')
+            ->orderBy('order')
+            ->latest('updated_at')
             ->get();
     }
 

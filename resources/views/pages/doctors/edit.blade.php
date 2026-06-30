@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => 'Edit Doctor'
+    'title' => 'Edit Doctor',
 ])
 
 
@@ -14,8 +14,8 @@
     </div>
 
     {{-- Form Card --}}
-    <form action="{{ route('doctors.update', $doctor) }}" method="POST" id="update-doctor-form"
-        enctype="multipart/form-data" class="space-y-6">
+    <form action="{{ route('doctors.update', $doctor) }}" method="POST" id="update-doctor-form" enctype="multipart/form-data"
+        class="space-y-6">
         @csrf
         @method('PUT')
         {{-- ── Section 1: Basic Information ───────────────────────────── --}}
@@ -68,9 +68,23 @@
                         Years of Experience
                     </label>
                     <input type="number" id="years_of_experience" name="years_of_experience"
-                        value="{{ old('years_of_experience', $doctor->years_of_experience) }}" min="0" placeholder="e.g. 12"
+                        value="{{ old('years_of_experience', $doctor->years_of_experience) }}" min="0"
+                        placeholder="e.g. 12"
                         class="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 px-4 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition @error('years_of_experience') border-red-400 dark:border-red-500 @enderror">
                     @error('years_of_experience')
+                        <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                {{-- Order --}}
+                <div>
+                    <label for="order" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                        Order
+                    </label>
+                    <input type="number" id="order" name="order" value="{{ old('order', $doctor->order) }}" min="0"
+                        placeholder="The order at which the doctor appear on the home page"
+                        class="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 px-4 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition @error('order') border-red-400 dark:border-red-500 @enderror">
+                    @error('order')
                         <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
@@ -115,8 +129,8 @@
                         class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Joining Date</label>
                     <div class="relative max-w-sm">
                         <div class="absolute inset-y-0 inset-s-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" fill="none" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
                             </svg>
@@ -137,9 +151,10 @@
                         class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Resignation Date</label>
                     <div class="relative max-w-sm">
                         <div class="absolute inset-y-0 inset-s-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
                                     d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
                             </svg>
                         </div>
@@ -245,8 +260,8 @@
                                 <img src="{{ Storage::url($doctor->image) }}" class="w-full h-full object-cover"
                                     alt="Current photo">
                             @else
-                                <svg class="w-8 h-8 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
+                                <svg class="w-8 h-8 text-gray-300 dark:text-gray-600" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
@@ -256,8 +271,8 @@
                         <div class="flex-1">
                             <label for="image"
                                 class="inline-flex items-center gap-2 cursor-pointer rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                                 </svg>
@@ -365,13 +380,12 @@
         </div>
 
     </form>
-
 @endsection
 
 
 @push('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
 
             const editor = new Quill('#editor', {
                 theme: 'snow'
@@ -383,7 +397,7 @@
             const form = document.getElementById('update-doctor-form');
             const hiddenInput = document.getElementById('bio');
 
-            form.addEventListener('submit', function () {
+            form.addEventListener('submit', function() {
                 hiddenInput.value = editor.root.innerHTML;
             });
         });
@@ -394,7 +408,7 @@
             if (!file) return;
 
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 preview.innerHTML = `<img src="${e.target.result}" class="w-full h-full object-cover" alt="Preview">`;
             };
             reader.readAsDataURL(file);

@@ -26,6 +26,7 @@ class DoctorData
         public ?string $board_certifications,
         public ?string $field_of_expertise,
         public ?int $years_of_experience,
+        public ?int $order,
         public ?string $quote,
 
     ) {

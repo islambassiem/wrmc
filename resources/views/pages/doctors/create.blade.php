@@ -72,6 +72,20 @@
                     @enderror
                 </div>
 
+                {{-- Order --}}
+                <div>
+                    <label for="order"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                        Order
+                    </label>
+                    <input type="number" id="order" name="order"
+                        value="{{ old('order') }}" min="0" placeholder="The order at which the doctor appear on the home page"
+                        class="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 px-4 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition @error('order') border-red-400 dark:border-red-500 @enderror">
+                    @error('order')
+                        <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 {{-- Field of Expertise --}}
                 <div class="sm:col-span-2">
                     <label for="field_of_expertise"
