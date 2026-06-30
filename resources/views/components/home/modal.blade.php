@@ -1,4 +1,4 @@
-<section class="fixed top-0 left-0 h-screen w-72 bg-white shadow-2xl z-50 flex flex-col font-serif">
+<section class="fixed top-0 left-0 h-screen w-72 bg-white shadow-2xl z-50 flex flex-col">
     <div class="border-b border-gray-200 p-6">
         <h2 class="text-xl font-bold text-primary-800">
             <img src="{{ asset('assets/logo.webp') }}" alt="logo">

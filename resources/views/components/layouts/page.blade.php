@@ -15,7 +15,7 @@
                     <button @click="open = true" class="block mx-5 md:hidden" aria-label="Menu">
                         <i class="fa-solid fa-bars fa-lg"></i>
                     </button>
-                    <div x-show="open" x-cloak x-transition.opacity class="fixed inset-0 z-40">
+                    <div x-show="open" x-cloak x-transition.opacity class="fixedx inset-0 z-40">
                         <!-- Backdrop -->
                         <div @click="open = false" class="absolute inset-0 bg-black/50"></div>
 
@@ -28,7 +28,7 @@
                             <x-home.modal />
                         </div>
                     </div>
-                    <div class="hidden md:flex items-center mx-auto gap-4 lg:gap-5 p-4 flex-1 font-serif  text-2xl">
+                    <div class="hidden md:flex items-center mx-auto gap-4 lg:gap-5 p-4 flex-1 text-2xl">
                         <a href="/"
                             class="uppercase py-2 px-4 rounded-md transition duration-500 hover:bg-primary-800 hover:text-primary-50">Home</a>
                         <a href="{{ route('home') . '#services'}}"
