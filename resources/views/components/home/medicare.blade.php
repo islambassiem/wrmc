@@ -1,8 +1,8 @@
 <section class="flex flex-col lg:flex-row container mx-auto items-center gap-8 my-10">
-    <div class="shrink-0">
+    {{-- <div class="shrink-0">
         <img src="{{ asset('assets/images/Medicare-Bulk-BIlling-Practice.webp') }}" alt="Medicare-Bulk-BIlling-Practice"
             class="w-full max-w-md h-auto p-5">
-    </div>
+    </div> --}}
 
     <div class="flex-1 p-4">
         <h2 class="text-2xl font-bold mb-4">

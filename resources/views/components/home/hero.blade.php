@@ -17,7 +17,7 @@
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                 </span>
                 <span class="text-sm font-medium">
-                    Trusted by Logan families for over 45 years
+                    Trusted by families for over 45 years
                 </span>
             </div>
 
